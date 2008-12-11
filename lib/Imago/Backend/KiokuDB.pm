@@ -6,17 +6,14 @@ use Moose;
 use KiokuDB;
 use KiokuDB::TypeMap;
 use KiokuDB::TypeMap::Entry::Passthrough;
-use KiokuDB::TypeMap::Entry::Callback;
-use KiokuDB::TypeMap::Entry::Set;
 
-use KiokuDB::Set::Transient;
-
-use Search::GIN::Extract::Callback;
-use Search::GIN::Query::Manual;
+#use Search::GIN::Extract::Callback;
+#use Search::GIN::Query::Manual;
 
 use Imago::Schema::User;
 use Imago::Schema::Page;
 use Imago::Schema::Page::Login;
+use Imago::Schema::Page::Signup;
 use Imago::Schema::Page::Redirect;
 
 use namespace::clean -except => 'meta';
@@ -24,7 +21,7 @@ use namespace::clean -except => 'meta';
 has dsn => (
     isa => "Str",
     is  => "ro",
-    default => "bdb-gin:dir=root/db", # TODO
+    default => "bdb:dir=root/db", # TODO
 );
 
 has extra_args => (
@@ -33,6 +30,22 @@ has extra_args => (
     default => sub { +{} },
     auto_deref => 1,
 );
+
+has typemap => (
+	isa => "KiokuDB::TypeMap",
+	is  => "ro",
+	lazy_build => 1,
+);
+
+sub _build_typemap {
+	my $self = shift;
+
+	KiokuDB::TypeMap->new(
+		entries => {
+			'Captcha::reCAPTCHA' => KiokuDB::TypeMap::Entry::Passthrough->new( intrinsic => 1 ),
+		},
+	);
+}
 
 has extractor => (
     does => "Search::GIN::Extract",
@@ -46,13 +59,6 @@ sub _build_extractor {
     Search::GIN::Extract::Callback->new(
         extract => sub {
             my ( $obj, $gin, %args ) = @_;
-
-            if ( $obj->does("Aetna::CMS::Schema::Role::Tag::Approve" ) ) {
-                return {
-                    page    => [ map { $_->digest } $obj->approved_pages->members ],
-                    section => [ map { $_->digest } $obj->approved_sections->members ],
-                };
-            }
 
             return;
         },
@@ -71,7 +77,8 @@ sub _build_directory {
 
     KiokuDB->connect(
         $self->dsn,
-        extract => $self->extractor,
+		typemap => $self->typemap,
+		#extract => $self->extractor,
         $self->extra_args,
     )
 }
