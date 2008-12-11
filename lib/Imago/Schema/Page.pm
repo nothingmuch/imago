@@ -4,6 +4,7 @@ package Imago::Schema::Page;
 use Moose;
 
 use Imago::Schema::Page::Content;
+use Imago::Renderer::Result::Page;
 
 use namespace::clean -except => 'meta';
 
@@ -22,6 +23,11 @@ has [qw(en he)] => (
 	is  => "ro",
 	required => 1,
 );
+
+sub process {
+	my ( $self, @args ) = @_;
+	Imago::Renderer::Result::Page->new( @args, page => $self );
+}
 
 __PACKAGE__->meta->make_immutable;
 

@@ -3,19 +3,12 @@
 package Imago::Renderer;
 use Moose;
 
-use Imago::Renderer::Result::Redirect;
-use Imago::Renderer::Result::HTML;
-
 use namespace::clean -except => 'meta';
 
 sub process {
-	my ( $self, $page ) = @_;
+	my ( $self, $page, @args ) = @_;
 
-	if ( $page->isa("Imago::Schema::Page::Redirect") ) {
-		Imago::Renderer::Result::Redirect->new( to => $page->to );
-	} else {
-		Imago::Renderer::Result::HTML->new( page => $page );
-	}
+	$page->process(@args);
 }
 
 __PACKAGE__->meta->make_immutable;

@@ -17,6 +17,7 @@ use Search::GIN::Query::Manual;
 use Imago::Schema::BLOB;
 use Imago::Schema::Page;
 use Imago::Schema::User;
+use Imago::Schema::Page::Login;
 
 use namespace::clean -except => 'meta';
 
@@ -83,6 +84,12 @@ sub page {
 	my ( $self, $page ) = @_;
 
 	$self->lookup("page:$page");
+}
+
+sub user {
+	my ( $self, $user ) = @_;
+
+	$self->lookup("user:$user");
 }
 
 __PACKAGE__->meta->make_immutable;

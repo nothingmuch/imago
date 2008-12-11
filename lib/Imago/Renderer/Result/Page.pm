@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-package Imago::Renderer::Result::HTML;
+package Imago::Renderer::Result::Page;
 use Moose;
 
 use Data::Dumper;
@@ -21,10 +21,35 @@ has html => (
 	lazy_build => 1,
 );
 
+has user => (
+	isa => "Imago::Schema::User",
+	is  => "ro",
+);
+
 sub _build_html {
 	my $self = shift;
 
-	"<html><head></head><body><pre>" . Dumper($self->page) . "</pre></body>";
+	no warnings 'uninitialized';
+
+	{
+		package Imago::Renderer::Result::HTML::Tags; # T::D exports 'meta', etc, need a new namespace
+
+		use Template::Declare::Tags 'HTML';
+		use Text::MultiMarkdown qw(markdown);
+
+		"" . html {
+			head {
+				title { $self->page->en->title }
+			}
+			body {
+				p { "user: " . $self->user }
+				div {
+					attr { id => "content" }
+					outs_raw markdown( $self->page->en->content->body )
+				}
+			}
+		};
+	}
 }
 
 sub write_to_catalyst {

@@ -1,10 +1,12 @@
 #!/usr/bin/perl
 
-package Imago::Script::Load;
+use utf8;
 
+package Imago::Script::Load;
 use Moose;
 
 use Imago::Backend::KiokuDB;
+use Authen::Passphrase;
 
 use namespace::clean -except => 'meta';
 
@@ -61,6 +63,40 @@ sub run {
 				),
 			),
 		),
+
+		$backend->insert(
+			Imago::Schema::User->new(
+				id => "katrin",
+				password => Authen::Passphrase->from_rfc2307(
+					"{SSHA}Gn351bZjMhdoZO1pZxEWuchJ3ne9XGhZxElu6LfvN9lfio2ff8stVg=="
+				),
+				real_name => "Katrin Kogman-Appel",
+			),
+		);
+
+		$backend->insert(
+			Imago::Schema::Page::Login->new(
+				en => Imago::Schema::Page::Content->new(
+					title => "login",
+					content => Imago::Schema::BLOB->new(
+						body => <<HTML,
+Please login
+
+<form method="post">
+	login: <input type="text" name="id" />
+	password: <input type="password" name="password" />
+</form>
+HTML
+					),
+				),
+				he => Imago::Schema::Page::Content->new(
+					title => "login",
+					content => Imago::Schema::BLOB->new(
+						body => "נא להכנס למעכת",
+					),
+				),
+			),
+		);
 	});
 }
 

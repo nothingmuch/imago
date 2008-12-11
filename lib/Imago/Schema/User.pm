@@ -6,7 +6,12 @@ use Moose;
 use MooseX::AttributeHelpers;
 use MooseX::Types::Authen::Passphrase qw(Passphrase);
 
+use Authen::Passphrase;
+use Authen::Passphrase::SaltedDigest;
+
 use namespace::clean -except => 'meta';
+
+with qw(KiokuDB::Role::ID);
 
 sub kiokudb_object_id { "user:" . shift->id }
 

@@ -22,7 +22,12 @@ sub _build_renderer {
 sub process {
 	my ( $self, $c, $page ) = @_;
 
-	my $result = $self->renderer->process($page);
+	my $result = $self->renderer->process(
+		$page,
+		context => $c,
+		request => $c->request,
+		( $c->user_exists ? ( user => $c->user->get_object ) : () ),
+	);
 
 	$result->write_to_catalyst($c);
 }
