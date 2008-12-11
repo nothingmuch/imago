@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG ! !Imago::Schema::
+---
+- !User
+  id:        nothingmuch
+  real_name: Yuval Kogman
+  email:     nothingmuch@woobling.org
+  password:  '{SSHA}FdBKh08yBX6uvI2G2aJvZl1alZowK5VyuOf2RPznPUNHSDjCFN4tsw=='
+- !User
+  id:   katrin
+  real_name: Katrin Kogman-Appel
+  email:     katrin@woobling.org
+  password:  '{SSHA}o4hxncP4dSmsO0ztrAiKP3/Dsu4RUzGpQy82rR8cMANTqNr/V7izog=='
+

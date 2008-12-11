@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG ! !Imago::Schema::
+---
+- &about !Page
+  id: about
+  he:
+    title: אודות
+    content: |
+      **אימגו - האגודה הישראלית לתרבות חזותית בימי הביניים** הוקמה ב-2008 לשמש
+      אגודה המייצגת את האינטרסים המשותפים של חוקרים אשר להם עניין באמנות,
+      אדריכלות ובתרבות החזותית של ימי הביניים. 
+      
+      האגודה מנוהלת על ידי ועד אשר נבחר כל שנתיים. כמו כן כל שנתיים נבחר יושב
+      ראש והאדוגה תנוהל במשך שנות כהונתו של כל יושב ראש במוסד האקדמי אליו הוא
+      שייך. אותו מוסד גם יארח את הכנס השנתי.
+  en:
+    title: About Us
+    content: |
+      **Imago - The Israeli Association for Visual Culture of the Middle Ages** was
+      founded in 2008 with the aim to represent the interests of scholars and
+      students in the Humanites who are concerned in any way with the arts, the
+      architecture, and the visual cultures of the Middle Ages. 
+      
+      The Association will have a Board of Directors headed by a chairperson, both to
+      be elected every two years. During those two years the offices of the
+      Association will be located at the institution the chairperson is affiliated
+      with. This institution will also host an annual research workshop.
+- !Page::Redirect
+  id: index
+  to: *about

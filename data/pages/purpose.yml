@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG ! !Imago::Schema::
+---
+- !Page
+  id: purpose
+  he:
+    title: מטרות האגודה
+    content: |
+      - ליצור במה לחילופי מידע בקרב חוקרי אמנות של ימי הביניים
+      - לייצג את החוקרים הללו ואת האינטרסים המשותפים שלהם בקהילייה האקדמית
+        בישראל ומחוצה לה
+      - לארגן כנוס שנתי או דו-שנתי בהם יציגו חברי האגודה את מחקריהם החדשים
+      - ליצור אתר אינטרנט ובו סוגי מידע רלוונטים שונים (מאגר מידע על החברים
+        ועבודתם, קישורים לאתרים במחקר ימי הביניים, פורום חוקרים, מידע על
+        כנסים בארץ ומחוצה לה), מאגר דוקטרטים בהתהוות, קישור למאגרים דומים
+        באתרים אחרים בעולם
+      - קיום קשר מקצועי עם אגודות של חוקרים בתחומים קרובים (היסטוריה, לימודים
+        קלאסיים, ארכיולוגיה, לימוידם ביזנטיים)
+      - ליצור קשר מקצועי עם אגודה בינלאומית בעלת עניין דומה:
+        (International Center of Medieval Art, New York)
+  en:
+    title: Purpose of Imago
+    content: |
+      - To provide a forum for scholars and students of medieval art towards
+        the exchange of information 
+      - To represent scholars and students of medieval art and their shared
+        interests in the Israeli academic community and abroad
+      - To organize a research workshop avery year or every other year 
+      - To create and to maintian an internet site with information relevant
+        for the study and research of medieval art
+      - To establish and maintain contact with similar associations in other
+        fields towards possible collaboration (History, Classical Studies, Byzanitne
+        Studies, Archeology and others)
+      - To establish and maintain contacts with similar associations promoting
+        the study and research of medieval art abroad  
