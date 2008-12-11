@@ -3,7 +3,13 @@
 package Imago::Schema::BLOB;
 use Moose;
 
+use Moose::Util::TypeConstraints;
+
 use namespace::clean -except => 'meta';
+
+coerce( __PACKAGE__,
+	from Str => via { __PACKAGE__->new( body => $_ ) },
+);
 
 with qw(Imago::Role::DigestID);
 

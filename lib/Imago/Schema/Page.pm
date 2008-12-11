@@ -22,6 +22,7 @@ has [qw(en he)] => (
 	isa => "Imago::Schema::Page::Content",
 	is  => "ro",
 	required => 1,
+	coerce => 1,
 );
 
 sub process {

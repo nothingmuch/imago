@@ -5,7 +5,13 @@ use Moose;
 
 use Imago::Schema::BLOB;
 
+use Moose::Util::TypeConstraints;
+
 use namespace::clean -except => 'meta';
+
+coerce( __PACKAGE__,
+	from HashRef => via { __PACKAGE__->new(%$_) },
+);
 
 with qw(Imago::Role::DigestID);
 
@@ -24,6 +30,7 @@ has content => (
 	isa => "Imago::Schema::BLOB",
 	is  => "ro",
 	required => 1,
+	coerce => 1,
 );
 
 __PACKAGE__->meta->make_immutable;

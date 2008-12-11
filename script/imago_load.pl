@@ -7,6 +7,10 @@ use Moose;
 
 use Imago::Backend::KiokuDB;
 use Authen::Passphrase;
+use Path::Class;
+use MooseX::YAML qw(LoadFile);
+
+use MooseX::Types::Path::Class qw(Dir File);
 
 use namespace::clean -except => 'meta';
 
@@ -20,83 +24,66 @@ has backend => (
 
 sub _build_backend { Imago::Backend::KiokuDB->new( extra_args => { create => 1 } ) }
 
+has data => (
+	isa => Dir,
+	is  => "ro",
+	default => sub { file(__FILE__)->parent->parent->subdir("data") },
+);
+
+has yaml_files => (
+	isa => "ArrayRef[Path::Class::File]",
+	is  => "ro",
+	required => 1,
+	lazy_build => 1,
+);
+
+sub _build_yaml_files {
+	my $self = shift;
+
+	my @files;
+
+	$self->data->recurse( callback => sub {
+		my $file = shift;
+
+		if ( -f $file && $file->basename =~ /\.yml$/ ) {
+			push @files, $file;
+		}
+	} );
+
+	return [ sort @files ];
+}
+
 sub run {
 	my $self = shift;
 
 	my $backend = $self->backend;
 
+	my @objects;
+
+	warn "loading\n";
+
+	foreach my $file ( @{ $self->yaml_files } ) {
+		my @data = LoadFile($file);
+
+		if ( @data == 1 ) {
+			unless ( blessed $data[0] ) {
+				if ( ref $data[0] eq 'ARRAY' ) {
+					@data = @{ $data[0] };
+				} else {
+					@data = %{ $data[0] }; # with IDs
+				}
+			}
+		}
+
+		push @objects, @data;
+	}
+
+	warn "inserting " . scalar(@objects) . " objects\n";
+
 	$backend->txn_do(sub {
 		my $scope = $backend->new_scope;
 
-		$backend->insert(
-			Imago::Schema::Page->new(
-				id => "index",
-				en => Imago::Schema::Page::Content->new(
-					title => "main",
-					content => Imago::Schema::BLOB->new(
-						body => "[login](/login)",
-					),
-				),
-				he => Imago::Schema::Page::Content->new(
-					title => "ikari",
-					content => Imago::Schema::BLOB->new(
-						body => "bar",
-					),
-				),
-			),
-		),
-
-		$backend->insert(
-			Imago::Schema::Page->new(
-				id => "foo",
-				en => Imago::Schema::Page::Content->new(
-					title => "foo",
-					content => Imago::Schema::BLOB->new(
-						body => "lala",
-					),
-				),
-				he => Imago::Schema::Page::Content->new(
-					title => "פוו",
-					content => Imago::Schema::BLOB->new(
-						body => "להלה",
-					),
-				),
-			),
-		),
-
-		$backend->insert(
-			Imago::Schema::User->new(
-				id => "katrin",
-				password => Authen::Passphrase->from_rfc2307(
-					"{SSHA}Gn351bZjMhdoZO1pZxEWuchJ3ne9XGhZxElu6LfvN9lfio2ff8stVg=="
-				),
-				real_name => "Katrin Kogman-Appel",
-			),
-		);
-
-		$backend->insert(
-			Imago::Schema::Page::Login->new(
-				en => Imago::Schema::Page::Content->new(
-					title => "login",
-					content => Imago::Schema::BLOB->new(
-						body => <<HTML,
-Please login
-
-<form method="post">
-	login: <input type="text" name="id" /> <br/>
-	password: <input type="password" name="password" /> <br/>
-</form>
-HTML
-					),
-				),
-				he => Imago::Schema::Page::Content->new(
-					title => "login",
-					content => Imago::Schema::BLOB->new(
-						body => "נא להכנס למעכת",
-					),
-				),
-			),
-		);
+		$backend->insert(@objects);
 	});
 }
 

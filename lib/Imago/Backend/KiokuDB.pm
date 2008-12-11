@@ -14,10 +14,10 @@ use KiokuDB::Set::Transient;
 use Search::GIN::Extract::Callback;
 use Search::GIN::Query::Manual;
 
-use Imago::Schema::BLOB;
-use Imago::Schema::Page;
 use Imago::Schema::User;
+use Imago::Schema::Page;
 use Imago::Schema::Page::Login;
+use Imago::Schema::Page::Redirect;
 
 use namespace::clean -except => 'meta';
 

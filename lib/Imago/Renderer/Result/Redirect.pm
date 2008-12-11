@@ -21,7 +21,7 @@ has to => (
 sub _build_to {
 	my $self = shift;
 
-	$self->page->id;
+	"/" . $self->page->to->id;
 }
 
 sub write_to_catalyst {
