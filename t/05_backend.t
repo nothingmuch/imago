@@ -26,13 +26,13 @@ lives_ok {
 		$backend->insert(
 			Imago::Schema::Page->new(
 				id => "index",
-				en => Imago::Schema::Page::Content->new(
+				en => Imago::Schema::Page::Static::Content->new(
 					title => "main",
 					content => Imago::Schema::BLOB->new(
 						body => "foo",
 					),
 				),
-				he => Imago::Schema::Page::Content->new(
+				he => Imago::Schema::Page::Static::Content->new(
 					title => "ikari",
 					content => Imago::Schema::BLOB->new(
 						body => "bar",
@@ -44,13 +44,13 @@ lives_ok {
 		$backend->insert(
 			Imago::Schema::Page->new(
 				id => "foo",
-				en => Imago::Schema::Page::Content->new(
+				en => Imago::Schema::Page::Static::Content->new(
 					title => "foo",
 					content => Imago::Schema::BLOB->new(
 						body => "lala",
 					),
 				),
-				he => Imago::Schema::Page::Content->new(
+				he => Imago::Schema::Page::Static::Content->new(
 					title => "פוו",
 					content => Imago::Schema::BLOB->new(
 						body => "להלה",

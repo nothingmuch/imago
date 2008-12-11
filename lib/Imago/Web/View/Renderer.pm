@@ -26,6 +26,7 @@ sub process {
 		$page,
 		context => $c,
 		request => $c->request,
+		lang    => ($c->request->param("lang") || 'en'), # FIXME $c->user? cookie? note scalar context
 		( $c->user_exists ? ( user => $c->user->get_object ) : () ),
 	);
 

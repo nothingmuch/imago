@@ -7,18 +7,18 @@ use utf8;
 
 use Test::More 'no_plan';
 
-use ok 'Imago::Schema::Page::Content';
+use ok 'Imago::Schema::Page::Static::Content';
 use ok 'Imago::Schema::Page';
 
 my $obj = Imago::Schema::Page->new(
 	id => "foo",
-	he => Imago::Schema::Page::Content->new(
+	he => Imago::Schema::Page::Static::Content->new(
 		title => "שלום",
 		content => Imago::Schema::BLOB->new(
 			body => "להל לה להלה"
 		),
 	),
-	en => Imago::Schema::Page::Content->new(
+	en => Imago::Schema::Page::Static::Content->new(
 		title => "Hello",
 		content => Imago::Schema::BLOB->new(
 			body => "moose laa"

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-package Imago::Schema::Page::Content;
+package Imago::Schema::Page::Static::Content;
 use Moose;
 
 use Imago::Schema::BLOB;

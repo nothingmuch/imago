@@ -7,11 +7,16 @@ use Imago::Renderer::Result::Redirect;
 
 use namespace::clean -except => 'meta';
 
-extends qw(Imago::Schema::Page::REST);
+with(
+	'Imago::Schema::Role::Page',
+	'Imago::Schema::Role::Page::Static' => {
+		excludes => "process",
+		alias    => { process => "process_get" },
+	},
+	'Imago::Schema::Role::Page::REST',
+);
 
-has '+id' => ( default => "login" );
-
-sub post {
+sub process_post {
 	my ( $self, %args ) = @_;
 
 	my $c = $args{context};

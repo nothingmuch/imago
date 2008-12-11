@@ -7,19 +7,11 @@ use Imago::Renderer::Result::Redirect;
 
 use namespace::clean -except => 'meta';
 
-with qw(KiokuDB::Role::ID);
-
-sub kiokudb_object_id { "page:" . shift->id }
-
-has id => (
-	isa => "Str",
-	is  => "ro",
-	required => 1,
-);
+with qw(Imago::Schema::Role::Page);
 
 has to => (
-	isa => "Imago::Schema::Page|Imago::Schema::Page::Redirect",
-	is  => "ro",
+	does => "Imago::Schema::Role::Page",
+	is   => "ro",
 	required => 1,
 );
 

@@ -7,7 +7,7 @@ use Test::More 'no_plan';
 
 use ok 'Imago::Schema::User';
 use ok 'Imago::Schema::BLOB';
-use ok 'Imago::Schema::Page::Content';
+use ok 'Imago::Schema::Page::Static::Content';
 use ok 'Imago::Schema::Page';
 
 use ok 'Imago::Backend::KiokuDB';

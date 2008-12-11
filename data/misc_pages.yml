@@ -17,3 +17,8 @@
         שם משתמש: <input type="text" name="id" /> <br/>
         ססמא: <input type="password" name="password" /> <br />
       </form>
+- !Page::Signup
+  id: signup
+  public_key:  6LdqRQQAAAAAANL5xnIKRWGh8aBXdWc_tdveO4Gw
+  private_key: 6LdqRQQAAAAAAFdhWAsaaeZVeSRFuaFvXL5rxzlb
+
