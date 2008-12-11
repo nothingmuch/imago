@@ -42,7 +42,9 @@ sub _build_html {
 				title { $self->page->en->title }
 			}
 			body {
-				p { "user: " . $self->user }
+				if ( my $user = $self->user ) {
+					p { attr { style => "float: right; border: 1px solid black;" } "logged in user: " . $user->real_name }
+				}
 				div {
 					attr { id => "content" }
 					outs_raw markdown( $self->page->en->content->body )

@@ -34,7 +34,7 @@ sub run {
 				en => Imago::Schema::Page::Content->new(
 					title => "main",
 					content => Imago::Schema::BLOB->new(
-						body => "foo",
+						body => "[login](/login)",
 					),
 				),
 				he => Imago::Schema::Page::Content->new(
@@ -83,8 +83,8 @@ sub run {
 Please login
 
 <form method="post">
-	login: <input type="text" name="id" />
-	password: <input type="password" name="password" />
+	login: <input type="text" name="id" /> <br/>
+	password: <input type="password" name="password" /> <br/>
 </form>
 HTML
 					),
