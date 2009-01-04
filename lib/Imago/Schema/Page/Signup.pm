@@ -10,9 +10,13 @@ use Imago::Renderer::Result::HTML;
 
 use namespace::clean -except => 'meta';
 
-with qw(
-	Imago::Schema::Role::Page
-	Imago::Schema::Role::Page::REST
+with(
+	'Imago::Schema::Role::Page',
+	'Imago::Schema::Role::Page::Static' => {
+		excludes => "process",
+		alias    => { process => "process_get" },
+	},
+	'Imago::Schema::Role::Page::REST',
 );
 
 has [qw(public_key private_key)] => (

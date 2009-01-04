@@ -32,7 +32,12 @@ __PACKAGE__->config(
 				}
 			}
 		}
-	}
+	},
+	'View::Renderer' => {
+		template_include_path => [
+			__PACKAGE__->path_to(qw(root templates)),
+		],
+	},
 );
 
 # Start the application

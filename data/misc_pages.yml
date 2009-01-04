@@ -21,4 +21,17 @@
   id: signup
   public_key:  6LdqRQQAAAAAANL5xnIKRWGh8aBXdWc_tdveO4Gw
   private_key: 6LdqRQQAAAAAAFdhWAsaaeZVeSRFuaFvXL5rxzlb
-
+  en:
+    title: Signup
+    content: english
+  he:
+    title: הרשמה
+    content: עברית
+- !Page::Links
+  id: links
+  links:
+  - !Link
+    title: Byzantine and Medieval Links Index
+    uri:   http://www.fordham.edu/halsall/medweb/links.htm
+    en_description: A directory of information on Byzantine art with many links to Medieval studies sites.
+    he_description: אתר המאגד כל הקשור לחומר על אמנות ביזנטית המופיע באינטרנט, וקישורים רבים אחרים ללימודים של ימי-הביניים.

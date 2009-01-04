@@ -15,6 +15,7 @@ use Imago::Schema::Page;
 use Imago::Schema::Page::Login;
 use Imago::Schema::Page::Signup;
 use Imago::Schema::Page::Redirect;
+use Imago::Schema::Nav;
 
 use namespace::clean -except => 'meta';
 

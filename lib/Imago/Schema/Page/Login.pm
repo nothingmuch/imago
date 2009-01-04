@@ -34,7 +34,7 @@ sub process_post {
 	if ( $user ) {
 		Imago::Renderer::Result::Redirect->new( %args, to => "/" );
 	} else {
-		$self->get(
+		$self->process_get(
 			%args,
 			error => 1,
 		);

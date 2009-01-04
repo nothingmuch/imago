@@ -78,7 +78,11 @@ sub run {
 		push @objects, @data;
 	}
 
-	warn "inserting " . scalar(@objects) . " objects\n";
+	my @pages = grep { $_->does("Imago::Schema::Role::Page::Static") } @objects;
+
+	push @objects, nav => Imago::Schema::Nav->new( pages => \@pages );
+
+	warn "inserting " . scalar(grep { ref } @objects) . " objects\n";
 
 	$backend->txn_do(sub {
 		my $scope = $backend->new_scope;

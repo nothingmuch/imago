@@ -1,0 +1,147 @@
+/* andreas07 - an open source xhtml/css website layout by Andreas Viklund - http://andreasviklund.com . Free to use for any purpose as long as the proper credits are given for the original design work.
+
+Version: 1.1, November 28, 2005 */
+
+	
+/**************** Page and tag styles ****************/
+body {
+	margin:0;
+	padding:0;
+	color:#303030;
+	background: #e0e0e0;
+	font-family: Verdana,Tahoma,sans-serif;
+}
+
+ul {
+	list-style:circle;
+	margin:15px 0 20px;
+	font-size:.9em;
+}
+
+li {
+	margin:0 0 8px 25px;
+}
+
+a {
+	color:#d85d5d;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#505050;
+	text-decoration:underline;
+}
+
+/**************** Sidebar area styles ****************/
+#sidebar {
+	position:absolute;
+	top:0;
+	left:0;
+	width: 13em;
+	height:100%;
+	overflow: hidden;
+	background:#e0e0e0 url(img/sidebarbg.gif) top right repeat-y;
+	text-align: right;
+}
+
+body > #sidebar {
+	position:fixed;
+}
+
+#logo {
+	margin: 2.6em 20px 0 0;
+	height: 4.5em;
+
+	/* with no <h1>: */
+	/*height: 8em;
+	margin-top: 2em;
+	margin-bottom: 0.6em;*/
+}
+
+#heading h1 {
+	margin: 0 20px 0 20px;
+	color:#d85d5d;
+	font-size: 3em;
+	letter-spacing: -0.15ex;
+}
+
+#heading h2 {
+	margin: 0 20px 4em 0;
+	color:#606060;
+	font-size:0.7em;
+}
+
+#menu {
+	overflow: hidden;
+}
+	
+/**************** Navigation menu styles ****************/
+#menu a {
+	display:block;
+	padding: .5em 20px .5em 0;
+	color:#606060;
+	font-size: 120%;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+#menu a:hover {
+	color:#303030;
+	background:#f0f0f0 url(img/sidebarbg.gif) top right repeat-y;
+}
+
+#menu a.active {
+	background:#fafafa;
+	border-top:1px solid #606060;
+	border-bottom:1px solid #606060;
+}
+
+#menu a.active:hover {
+	color:#505050;
+	background:#fafafa;
+}
+
+
+	
+/**************** Content area styles ****************/
+
+#wrapper {
+	position: absolute;
+	top: 0;
+	left: 13em;
+
+	margin-right: 4em;
+	max-width: 110ex;
+	height: 100%;
+
+	border-right: 1px solid #606060;
+	background: #fafafa url(img/heading.jpg) top right no-repeat;
+}
+
+#content {
+	padding: 3em;
+	font-family: Palatino, Georgia, serif;
+}
+
+#content p {
+	line-height: 175%;
+	text-align: justify;
+}
+
+#content h1 {
+	/* font-family: Palatino, Georgia, serif; */
+	/* color:#d85d5d; */
+	font-size: 3em;
+	margin: 1.55em;
+	text-align: right;
+	white-space: nowrap;
+	letter-spacing: 0.2ex;
+}
+
+#content h2 {
+	color:#606060;
+	font-weight:normal;
+	font-size:2.5em;
+	text-align:center;
+}
