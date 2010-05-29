@@ -1,0 +1,24 @@
+directory layout:
+	lib contains code, installable, sharable
+	resc contains non code resources, installable, sharable
+
+	it should be possible to install the app layout somewhere sharable, and create
+	new app instances (keys/config, data)
+
+	should resources be in @INC? e.g. override data/objects.yml in PWD?
+
+
+complex actions:
+
+	POST actions:
+
+		instead of rendering to a uri these render using HTML::Zoom by altering
+		a form (add_attribute( action => ... ), append <hidden>)
+
+	client side closures:
+
+		serialize closure using KiokuX::MessageBus into a tamper proof cookie
+
+		the URI has a UUID e.g. /cont/...uuid..., and the cookie is constrained to that path
+
+		$action->to_link returns a Widget::Link with the cookie as an annotation

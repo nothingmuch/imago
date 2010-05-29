@@ -1,0 +1,169 @@
+/* andreas07 - an open source xhtml/css website layout by Andreas Viklund - http://andreasviklund.com . Free to use for any purpose as long as the proper credits are given for the original design work.
+
+Version: 1.1, November 28, 2005 */
+
+    
+/**************** Page and tag styles ****************/
+body {
+    margin:0;
+    padding:0;
+    color:#303030;
+    background: #e0e0e0;
+    /* font-family: Verdana,Tahoma,sans-serif; */
+    font-family: Palatino, Georgia, serif;
+}
+
+ul {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+li {
+    margin: 0.75em;
+}
+
+a {
+    color:#b2764c;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a:hover {
+    color:#eea65c;
+}
+
+/**************** Sidebar area styles ****************/
+#sidebar {
+    z-index: 100;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 13em;
+    height:100%;
+    overflow: hidden;
+    background:#e0e0e0 url(img/sidebarbg.gif) top right repeat-y;
+    text-align: right;
+}
+
+body > #sidebar {
+    position: fixed;
+}
+
+#logo {
+    margin: 1em 20px 3em 20px;
+    width: 80%;
+    border: none;
+
+    /* with no <h1>: */
+    /*height: 8em;
+    margin-top: 2em;
+    margin-bottom: 0.6em;*/
+}
+
+#heading h1 {
+    display: none;
+
+    margin: 0 20px 0 20px;
+    color:#b2764c;
+    font-size: 3em;
+    letter-spacing: -0.15ex;
+}
+
+#heading h2 {
+    display: none;
+
+    margin: 0 20px 4em 0;
+    color:#606060;
+    font-size:0.7em;
+}
+
+/**************** Navigation menu styles ****************/
+
+.menu {
+    overflow: hidden;
+    /* font-family: Verdana,Tahoma, sans-serif; */
+}
+    
+.menu a {
+    display:block;
+    padding: .5em 20px .5em 0;
+    color:#606060;
+    font-weight:normal;
+    text-decoration:none;
+}
+
+.menu a:hover {
+    color: black;
+}
+
+.menu a.active {
+    color: black;
+    background:#fafafa;
+    border-top:1px solid #606060;
+    border-bottom:1px solid #606060;
+}
+
+.menu a.active:hover {
+    color: black;
+    background:#fafafa;
+}
+
+/**************** Content area styles ****************/
+
+#wrapper {
+    position: absolute;
+    top: 0;
+    left: 13em;
+
+    margin-right: 4em;
+    max-width: 120ex;
+    min-width: 70ex;
+    min-height: 100%;
+
+    border-right: 1px solid #606060;
+    background: #fafafa url(img/heading.jpg) top right no-repeat;
+}
+
+#content {
+    padding: 4em;
+    font-family: Palatino, Georgia, serif;
+    line-height: 150%;
+    text-align: justify;
+}
+
+#content h1 {
+    /* font-family: Palatino, Georgia, serif; */
+    /* color:#d85d5d; */
+	margin-top: 0.8em;
+    font-size: 3em;
+    /* text-align: right; */
+    white-space: nowrap;
+    letter-spacing: 0.1ex;
+}
+
+#content .section .section h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.3ex;
+	margin-top: 1.5em;
+    margin-left: 0.1em;
+    font-weight:normal;
+    font-size: 1.4em;
+}
+
+#content .section .section .section h1 {
+    letter-spacing: 0;
+    text-transform: none;
+    margin-left: 1em;
+	font-size: 1.1em;
+}
+
+
+/* ex: set sw=4 et: */
+
+
+
+/* HTML 5 Stuff */
+header, footer, nav, section, article { 
+ display:block; 
+}
+

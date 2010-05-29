@@ -1,0 +1,15 @@
+/**************** IE fixes ****************/
+
+html { height: 100%; }
+body {
+    height:100%; width:100%; overflow:auto;
+}
+
+#sidebar {
+    position: absolute; left: 0px; top: 0px; 
+}
+
+#wrapper {
+    width: expression((document.body.clientWidth > 900)? "900px" : "auto");
+    height: 100%;
+}
