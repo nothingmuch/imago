@@ -281,6 +281,131 @@ pages:
       - !Schema::Link
         title: ProQuest Dissertations & Theses
         uri: http://wwwlib.umi.com/dissertations/
+- &scholarships !Schema::VersionedItem
+  id: "public:scholarships"
+  version: !Schema::Page::Links
+    title:
+      en: Scholarships
+      he: מלגות
+    body:
+    - !Schema::Page::Links
+      title:
+        en: International Scholarships
+        he: 'מלגות בנל"א - כללי'
+      body:
+      - !Schema::Link
+        uri: http://www.metmuseum.org/education/fellowship.html
+      - !Schema::Link
+        uri: http://jeffmahorney.com/wordpress/?page_id=83
+      - !Schema::Link
+        uri: http://www.medievalacademy.org/grants/gradstudent_othergrants.htm
+      - !Schema::Link
+        uri: http://www.kressfoundation.org/fellowships/default.aspx?id=48
+      - !Schema::Link
+        uri: http://thewalters.org/research/fellowships/
+      - !Schema::Link
+        uri: http://melbourneartnetwork.com.au/tag/art-history-fellowships-and-internships/
+      - !Schema::Link
+        uri: http://www.spo.berkeley.edu/Fund/hpostdoc.html
+      - !Schema::Link
+        uri: http://www.clarkart.edu/research/content.cfm?ID=43
+      - !Schema::Link
+        uri: http://www.doaks.org/research/info_fellowships.html
+    - !Schema::Page::Links
+      title: Getty
+      body:
+      - !Schema::Link
+        title: Grants
+        uri: http://www.getty.edu/grants/
+      - !Schema::Link
+        title: Postdoctoral Fellowships in the History of Art
+        uri: http://www.getty.edu/grants/research/scholars/research_postdoc.html
+      - !Schema::Link
+        title: Other possibilities
+        uri: http://www.enotes.com/scholarships-loans/getty-grant-program
+    - !Schema::Page::Links
+      title:
+        en: Doctoral, Research and Post-Doc Scholarships in Germany
+        he: מלגות דוקטורט, מחקר, ופוסט-דוק בגרמניה
+      body:
+      - !Schema::Link
+        title: Minerva
+        uri: http://www.minerva.mpg.de/fellowships/fellowships_application.html
+      - !Schema::Link
+        title: Max-Planck-Gesellschaft
+        uri: http://www.mpg.de/english/portal/index.html
+      - !Schema::Link
+        title: Gerda-Henkel Stiftung (Archeology and Art History)
+        uri: http://www.gerda-henkel-stiftung.de/home.php?nav_id=15&language=en
+      - !Schema::Link
+        title: German Israeli Foundation
+        uri: http://www.gif.org.il
+      - !Schema::Link
+        title: Humboldt
+        description: 
+          en: |
+            Related: <a
+            href="http://www.humboldt-foundation.de/web/7806.html">A listing of
+            links to many scholraships in diverse fields</a>,
+            <a
+            href="http://www.humboldt-foundation.de/web/humboldt-fellowship-experienced.html">Humboldt
+            Research Fellowship for Experienced Researchers</a>
+          he: |
+            מידע נוסף: <a href="http://www.humboldt-foundation.de/web/7806.html">רשימת קישוריות למלגות רבות בתחומים מגוונים</a>
+            <a href="http://www.humboldt-foundation.de/web/humboldt-fellowship-experienced.html">Humboldt
+            Research Fellowship for Experienced Researchers</a>
+        uri: http://www.humboldt-foundation.de/web/771.html
+      - !Schema::Link
+        title: Deutsche Forschungsgemeinschaft
+        uri: http://www.dfg.de/index.jsp
+      - !Schema::Link
+        title: DAAD (Deutscher Akademischer Austauschdienst)
+        description:
+          he: בעיקר לתואר ראשון ושני או מלגות מחקר קצרות מועד
+          en: Primarily for BA and MA or short term research grants
+        uri: http://www.daad.de/en/index.html
+      - !Schema::Link
+        title: Fritz Thyssen Stiftung
+        uri: http://www.fritz-thyssen-stiftung.de/
+      - !Schema::Link
+        title: Index of Scholarships, German Embassy
+        uri: http://www.tel-aviv.diplo.de/Vertretung/telaviv/he/06/Stipendien/Stipendien.html
+      - !Schema::Link
+        title: Konrad  Adenauer Stiftung
+        uri: http://www.kas.de/
+      - !Schema::Link
+        title: Heinrich Böll Stiftung
+        uri: http://www.boell.de/asp/frameset_en.html
+      - !Schema::Link
+        uri: http://www.auswaertiges-amt.de/www/en/aussenpolitik/kulturpolitik/wissenschaft/stipendien_html
+    - !Schema::Page::Links
+      title:
+        en: Israeli grants or with Israeli participation
+        he: מלגות בשיתוף עם/בישראל
+      body:
+      - !Schema::Link
+        uri: http://www.isf.org.il/
+      - !Schema::Link
+        uri: http://www.fulbright.org.il/
+      - !Schema::Link
+        uri: http://www.gif.org.il/
+      - !Schema::Link
+        uri: http://www.bard-isus.com/
+      - !Schema::Link
+        uri: http://www.academy.ac.il/
+      - !Schema::Link
+        title: רשימת מלגות דוקטורנטים באתר לימודים בישראל
+        uri: http://www.universities-colleges.org.il/דוקטורנטים/
+      - !Schema::Link
+        title: מלגת אלון
+      - !Schema::Link
+        title: מלגת וולף ללימודי דוקטורט, אוניברסיטת תל-אביב
+      - !Schema::Link
+        title: מלגת קרייטמן ללימודי פוסט-דוק, אוניברסיטת בן-גוריון
+      - !Schema::Link
+        title: מלגת רוטנשטרייך ללימודי דוקטורט, אוניברסיטת תל-אביב
+      - !Schema::Link
+        title: מלגת רוטשילד 
 - !Schema::VersionedItem
   id: "public:privacy"
   version: !Schema::Document
@@ -298,6 +423,7 @@ roles:
     - *about
     - *purpose
     - *links
+    - *scholarships
   edit: &edit !Web::Role::Edit {}
   login: &login !Web::Role::Login {}
   logout: &logout !Web::Role::Logout {}

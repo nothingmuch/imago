@@ -142,6 +142,7 @@ body > #sidebar {
 }
 
 #content .section .section h1 {
+    white-space: normal;
     text-transform: uppercase;
     letter-spacing: 0.3ex;
 	margin-top: 1.5em;

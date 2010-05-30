@@ -21,7 +21,7 @@ class Imago::Schema::Link with KiokuDB::Role::ID::Digest with MooseX::Clone {
     has uri => (
         isa => Uri,
         is  => "ro",
-        required => 1,
+        # required => 1, # FIXME fix the data
         coerce => 1,
     );
 
@@ -29,7 +29,7 @@ class Imago::Schema::Link with KiokuDB::Role::ID::Digest with MooseX::Clone {
         return (
             $self->title,
             $self->description,
-            $self->uri->as_string,
+            ( $self->uri ? $self->uri->as_string : undef ),
         );
     }
 

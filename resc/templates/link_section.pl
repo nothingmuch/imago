@@ -15,23 +15,35 @@ filter("ul", repeat_content => [
                 template_args => \%args,
             };
 
-            $_->select('a')->add_attribute( href => $link->uri->as_string )
-				->select("a")->replace_content( process_for_zoom($link->title || $link->uri->as_string) )
-				->select("span")->replace( $link->description
-					? do {
-						# FIXME there has got to be a better way than this, like [ \":&nbsp;&nbsp;", $link->description ]
-							my $desc = process_for_zoom($link->description);
-							$desc = $desc->() if ref $desc eq 'CODE';
-							HTML::Zoom->from_html(
-								"<span>:&nbsp;&nbsp;" .
-								(blessed $desc ? $desc->to_html : HTML::Entities::encode_entities($desc) )
-								. "</span>"
-							);
-						}
-					: HTML::Zoom->from_html("")
-				);
+            my $zoom = $_;
+
+            if ( my $uri = $link->uri ) {
+                $zoom = $zoom->select('a')->add_attribute( href => "$uri");
+                $zoom = $zoom->select("a")->replace_content( $link->title ? process_for_zoom($link->title) : "$uri" );
+            } elsif ( $link->title ) {
+                $zoom = $zoom->select("a")->replace( process_for_zoom($link->title) );
+            } else {
+                die "No URI or title";
+                # WTF, fix that data
+            }
+
+            if ( $link->description ) {
+                my $desc = process_for_zoom($link->description);
+                $desc = $desc->() if ref $desc eq 'CODE';
+                $zoom = $zoom->select("span")->replace(
+                    HTML::Zoom->from_html(
+                        "<span>:&nbsp;&nbsp;" .
+                        (blessed $desc ? $desc->to_html : HTML::Entities::encode_entities($desc) )
+                        . "</span>"
+                    ),
+                );
+            } else {
+                $zoom = $zoom->select("span")->replace(HTML::Zoom->from_html(""));
+            }
+
+            return $zoom;
         }
     } @{ param("links") }
 ]);
 
-
+# ex: set sw=4 et:
