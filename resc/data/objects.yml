@@ -106,6 +106,30 @@ pages:
   id: "public:index"
   version: !Schema::Alias
     to: *about
+- &news !Schema::VersionedItem
+  id: "public:news"
+  version: !Schema::Document
+    title:
+      en: News
+      he: חדשות
+    body:
+      he: |
+        <div class="section">
+          <h1>קול קורא לכנס אימגו הרביעי</h1>
+
+          <p>פורסם <a
+          href="/static/pdf/2011_call_for_papers.pdf">קול קורא</a> לכנס אימגו
+          הרביעי 2011: גבולות ורב-תרבותיות בימה"ב (מסמך PDF להורדה)</p>
+        </div>
+      en: |
+        <div class="section">
+          <h1>Call for Paper for IMAGO Fourth Annual Conference</h1>
+      
+          <p>Imago has published a <a
+          href="/static/pdf/2011_call_for_papers.pdf">Call for Paper</a> for IMAGO
+          Fourth Annual Conference on Boundaries and Multiculturalism in the
+          Middle Ages Download the Call For Papers</a> (Hebrew PDF file).</p>
+        </div>
 - &purpose !Schema::VersionedItem
   id: "public:purpose"
   version: !Schema::Document
@@ -854,6 +878,7 @@ roles:
   browse: &browse !Web::Role::Browse
     default_pages:
     - *about
+    - *news
     - *purpose
     - *links
     - *scholarships
