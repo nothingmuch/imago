@@ -221,18 +221,29 @@ pages:
       title: Networks
       body:
       - !Schema::Link
+        title: Byzantine Studies and Association of North America
+        uri: http://www.bsana.net
+      - !Schema::Link
         title: CAAH
         description: Consortium of Art and Architectural Historians
         uri: http://www.princeton.edu/lists
       - !Schema::Link
-          title: H-ISLAMART
-          description: H-Net List for the History of Islamic Art and Architecture
-          #uri: http://www.h-islamicart.h-net.msu.edu
-          uri: http://www.h-net.org/~islamart/
+        title: The 14th Century Society
+        uri: http://pages.slu.edu/faculty/anderswl/14thc/index.html
+      - !Schema::Link
+        title: H-ISLAMART
+        description: H-Net List for the History of Islamic Art and Architecture
+        uri: http://www.h-net.org/~islamart/
       - !Schema::Link
         title: H-ARTHIST
         description: "daily report: conferences, call for paper, jobs, publications etc."
         uri: http://www.arthist.net
+      - !Schema::Link
+        title: International Center of Medieval Art
+        uri: http://www.medievalart.org/
+      - !Schema::Link
+        title: Medieval Academy of America
+        uri: http://www.medievalacademy.org/
       - !Schema::Link
         title: The Medieval Review
         description: reviews of new publications on medieval studies, including art history
@@ -529,8 +540,6 @@ pages:
       - !Schema::Link
         title: Heinrich Böll Stiftung
         uri: http://www.boell.de/asp/frameset_en.html
-      - !Schema::Link
-        uri: http://www.auswaertiges-amt.de/www/en/aussenpolitik/kulturpolitik/wissenschaft/stipendien_html
     - !Schema::Page::Links
       title:
         en: Israeli grants or with Israeli participation
