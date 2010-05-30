@@ -9,7 +9,8 @@ class Imago::Schema::User with MooseX::Clone {
     use Imago::Web::Role;
 
     has identities => (
-        traits => [qw(Clone)],
+        #traits => [qw(Clone)], # FIXME
+        traits => [qw(NoClone)],
         isa => "KiokuDB::Set",
         coerce => 1,
         lazy_build => 1,
@@ -24,7 +25,8 @@ class Imago::Schema::User with MooseX::Clone {
     method _build_identities { return set() }
 
     has roles => (
-        traits => [qw(Clone)],
+        #traits => [qw(Clone)], # FIXME
+        traits => [qw(NoClone)],
         isa => "KiokuDB::Set",
         required => 1,
         coerce => 1,

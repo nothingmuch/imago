@@ -21,7 +21,15 @@ class Imago::Model::KiokuDB extends KiokuX::Model {
     }
 
     method new_anonymous_user (@args) {
-        return $self->lookup("user:anonymous")->clone(@args);
+        my $user = $self->lookup("user:anonymous");
+
+        # FIXME forces loading of sets to avoid missing ->clone on Set::Deferred
+        # FIXME split up anon from normal users? $anon->reify(@args) ?
+        return $user->clone(
+            roles => [ $user->roles ],
+            identities => [ ],
+            @args,
+        );
     }
 }
 
