@@ -23,15 +23,26 @@ class Imago::Web::Renderer::Page::Fragment {
 		);
 	}
 
+	method title_widget ($title) {
+		Imago::View::Widget::PageTitle->new(
+			content => $title,
+		);
+	}
+
 	method add_page_title (Imago::Web::Context $c, :$title!, :$value!) {
+		$self->annotate($c,
+			$value,
+			exports => [
+				$self->title_widget($title),
+			],
+		);
+	}
+
+	method annotate (Imago::Web::Context $c, $value!, @args) {
         return Imago::View::Annotation->new(
-            value   => $value,
-            exports => [
-                Imago::View::Widget::PageTitle->new(
-                    content => $title,
-                ),
-            ],
-        );
+            value        => $value,
+			@args,
+		);
 	}
 
     method render_section (Imago::Web::Context $c, :$title!, :$body! ) {
