@@ -60,7 +60,7 @@ pages:
           <br/>
           <br/>
           <p>תכנות ועיצוב האתר ע"י <a
-          href="http://nothingmuch.woobling.org/">יובל קוג'מן</a>.</p>
+          href="http://nothingmuch.woobling.org/">יובל קוג'מן</a></p>
         </div>
       en: |
         <p><b>Imago - The Israeli Association for Visual Culture of the Miple Ages</b> was
@@ -115,7 +115,7 @@ pages:
           <br/>
           <br/>
           <p>Website design and programming by <a
-          href="http://nothingmuch.woobling.org/">Yuval Kogman</a>.</p>
+          href="http://nothingmuch.woobling.org/">Yuval Kogman</a></p>
         </div>
 - !Schema::VersionedItem
   id: "public:index"
