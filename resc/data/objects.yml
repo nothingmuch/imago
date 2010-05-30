@@ -438,22 +438,31 @@ pages:
         he: 'מלגות בנל"א - כללי'
       body:
       - !Schema::Link
+        title: The Metropolitan Museum of Art
         uri: http://www.metmuseum.org/education/fellowship.html
       - !Schema::Link
+        title: The ICMA-Samuel H. Kress Research Awards,
         uri: http://jeffmahorney.com/wordpress/?page_id=83
       - !Schema::Link
+        title: Medieval Academy of America
         uri: http://www.medievalacademy.org/grants/gradstudent_othergrants.htm
       - !Schema::Link
+        title: The Kress Foundation
         uri: http://www.kressfoundation.org/fellowships/default.aspx?id=48
       - !Schema::Link
+        title: The Walters Art Museum
         uri: http://thewalters.org/research/fellowships/
       - !Schema::Link
+        title: Andrew W. Mellon Postdoctoral Fellowship in the Humanities
         uri: http://melbourneartnetwork.com.au/tag/art-history-fellowships-and-internships/
       - !Schema::Link
+        title: Berkeley Index of Postdoctoral Fellowships in the Humanities
         uri: http://www.spo.berkeley.edu/Fund/hpostdoc.html
       - !Schema::Link
+        title: The Clark Fellowships
         uri: http://www.clarkart.edu/research/content.cfm?ID=43
       - !Schema::Link
+        title: Dumbarton Oaks Fellowships
         uri: http://www.doaks.org/research/info_fellowships.html
     - !Schema::Page::Links
       title: Getty

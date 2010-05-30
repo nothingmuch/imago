@@ -64,8 +64,10 @@ class Imago::Web::Role::Browse with Imago::Web::Role {
         map {
             Imago::View::Widget::Link->new(
                 action => $self->get_action($c, page => $_ ),
-                content => $_->item->title,
-            )
+                # FIXME horrible horrible horrible
+                # make nav_items be a static list of things?
+                content => ( $_->id =~ /about/ ? Imago::Schema::String->new( en => "Home", he => "דף הבית" ) : $_->item->title ),
+            ),
         } $self->default_pages;
     }
 
