@@ -1,7 +1,5 @@
 use MooseX::Declare;
 
-use utf8;
-
 class Imago::View::Response::HTTP with MooseX::Clone {
     use MooseX::MultiMethods;
 
@@ -41,6 +39,8 @@ class Imago::View::Response::HTTP with MooseX::Clone {
             body => [ $blob->contents ],
             headers => [
                 $blob->headers,
+                "Cache-Control" => "public; max-age=" . (24 * 3600),
+                Expires => HTTP::Date::time2str( time + 24 * 3600 )
             ],
         );
     }
@@ -55,6 +55,8 @@ class Imago::View::Response::HTTP with MooseX::Clone {
             headers => [
                 "Content-Type" => "text/html; charset=utf8",
                 "Location" => $uri,
+                "Cache-Control" => "public; max-age=" . (24 * 3600),
+                Expires => HTTP::Date::time2str( time + 24 * 3600 )
             ],
             body => <<HTML,
 <html>

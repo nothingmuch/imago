@@ -942,7 +942,7 @@ users:
   anonymous: !Schema::User
     roles:
       - *browse
-      - *login
+      #- *login
   nothingmuch: &nothingmuch !Schema::User
     roles:
       - *browse
