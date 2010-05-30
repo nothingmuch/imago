@@ -37,7 +37,7 @@ class Imago::Schema::Link with KiokuDB::Role::ID::Digest with MooseX::Clone {
         return {
             ( $self->has_title ? ( title => $self->title ) : () ),
             ( $self->has_description ? ( description => $self->description ) : () ),
-            uri => $self->uri->as_string,
+            ( $self->uri ? ( uri => $self->uri->as_string ) : () ),
         };
     }
 }

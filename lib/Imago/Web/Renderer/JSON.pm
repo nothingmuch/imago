@@ -20,7 +20,7 @@ class Imago::Web::Renderer::JSON with Imago::Web::Renderer::Representation {
                 charset  => "utf-8",
             );
         } catch {
-            die "Can't render " . ref($item) . " as JSON"; # FIXME real error with a code and everything
+            die "Can't render " . ref($item) . " as JSON: $_"; # FIXME real error with a code and everything
         }
     }
 }
