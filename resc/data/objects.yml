@@ -8,6 +8,7 @@ pages:
     title:
       he: אודות
       en: About Us
+# FIXME microformats, User objects? make freeflow text extract info from User objects?
     body:
       he: |
         <p><b>אימגו - האגודה הישראלית לתרבות חזותית בימי הביניים</b> הוקמה ב-2008 לשמש
@@ -16,15 +17,92 @@ pages:
         <p>האגודה מנוהלת על ידי ועד אשר נבחר כל שנתיים. כמו כן כל שנתיים נבחר יושב
         ראש והאדוגה תנוהל במשך שנות כהונתו של כל יושב ראש במוסד האקדמי אליו הוא
         שייך. אותו מוסד גם יארח את הכנס השנתי.</p>
+        
+        <div class="section">
+          <h1>וועד אימגו 2011-2009</h1>
+
+          <div class="section">
+            <h1>יו"ר</h1>
+            <p>אסף פינקוס, אוניברסיטת תל-אביב <br/>
+            <a href="mailto:pinkusas@post.tau.ac.il">pinkusas@post.tau.ac.il</a></p>
+          </div>
+
+          <div class="section">
+            <h1>גזברות</h1>
+            <p>מתי מאיר, האוניברסיטה הפתוחה <br/>
+            <a href="mailto:msmati@mscc.huji.ac.il">msmati@mscc.huji.ac.il</a></p>
+          </div>
+
+          <div class="section">
+            <h1>תקנון</h1>
+            <p>מרגו שטרומזה-אוזן, תלמידי מחקר, אוניברסיטת בן-גוריון בנגב <br/>
+            <a href="mailto:uzanym@bgu.ac.il">uzanym@bgu.ac.il</a></p>
+          </div>
+
+          <div class="section">
+            <h1>אינטרנט ופרויקטים מיוחדים</h1>
+            <p>אסף פינקוס <br/>
+            <p>אסף פינקוס, אוניברסיטת תל-אביב <br/>
+            <a href="mailto:pinkusas@post.tau.ac.il">pinkusas@post.tau.ac.il</a> <br/>
+            אנסטסיה קשמן, חוקרי פוסט-דוקטורט <br/>
+            <a href="mailto:keshman@mscc.huji.ac.il">keshman@mscc.huji.ac.il</a> <br/>
+            אמה מעיין-דרור, אוניברסיטת חיפה <br/>
+            <a href="mailto:madror@zahav.net.il">madror@zahav.net.il</a></p>
+          </div>
+
+          <div class="section">
+            <h1>אירגון הכנס השנתי</h1>
+            <p>אנסטסיה קשמן, חוקרי פוסט-דוקטורט <br/>
+            <a href="mailto:keshman@mscc.huji.ac.il">keshman@mscc.huji.ac.il</a></p>
+          </div>
+        </div>
       en: |
-        <p><b>Imago - The Israeli Association for Visual Culture of the Middle Ages</b> was
+        <p><b>Imago - The Israeli Association for Visual Culture of the Miple Ages</b> was
         founded in 2008 with the aim to represent the interests of scholars and
         students in the Humanites who are concerned in any way with the arts, the
-        architecture, and the visual cultures of the Middle Ages.</p>
+        architecture, and the visual cultures of the Miple Ages.</p>
         <p>The Association will have a Board of Directors headed by a chairperson, both to
         be elected every two years. During those two years the offices of the
         Association will be located at the institution the chairperson is affiliated
         with. This institution will also host an annual research workshop.</p>
+
+        <div class="section">
+          <h1>Board of Directors 2009-2011</h1>
+
+          <div class="section">
+            <h1>Chair</h1>
+            <p>Assaf Pinkus, Tel Aviv University <br/>
+            <a href="mailto:pinkusas@post.tau.ac.il">pinkusas@post.tau.ac.il</a> </p>
+          </div>
+
+          <div class="section">
+            <h1>Treasurer</h1>
+            <p>Mati Meyer, The Open University <br/>
+            <a href="mailto:msmati@mscc.huji.ac.il">msmati@mscc.huji.ac.il</a> 	</p>
+          </div>
+
+          <div class="section">
+            <h1>Internet and Special Projects</h1>
+            <p>Assaf Pinkus <br/>
+            <a href="mailto:pinkusas@post.tau.ac.il">pinkusas@post.tau.ac.il</a> <br/>
+            Anastasia Keshman, Post-doctoral researchers <br/>
+            <a href="mailto:keshman@mscc.huji.ac.il">keshman@mscc.huji.ac.il</a> <br/>
+            Emma Maayan-Dror, University of Haifa <br/>
+            <a href="mailto:madror@zahav.net.il">madror@zahav.net.il</a></p>
+          </div>
+
+          <div class="section">
+            <h1>Constitution</h1>
+            <p>Margo Stroumsa-Uzan, Ben Gurion University of the Negev <br/>
+            <a href="mailto:uzanym@bgu.ac.il">uzanym@bgu.ac.il</a></p>
+          </div>
+
+          <div class="section">
+            <h1>Annual Workshop</h1>
+            <p>Anastasia Keshman, Post-doctoral researchers <br/>
+            <a href="mailto:keshman@mscc.huji.ac.il">keshman@mscc.huji.ac.il</a></p>
+          </div>
+        </div>
 - !Schema::VersionedItem
   id: "public:index"
   version: !Schema::Alias
@@ -66,6 +144,73 @@ pages:
         <li> To establish and maintain contacts with similar associations promoting
              the study and research of medieval art abroad</li>
         </ul>
+- &members !Schema::VersionedItem
+  id: "public:members"
+  version: !Schema::Document
+    title:
+      en: Members
+      he: חברים
+    body:
+      en: |
+        <p dir="ltr">
+        <a href="mailto:atidaamit@walla.com">Amit Atida</a> <br/> 
+        <a href="mailto:mslili@pluto.mscc.huji.ac.il">Arad Lili (Ph.D.)</a> <br/>
+        <a href="mailto:yaela@research.haifa.ac.il">Armon Yael (Ph.D.)</a> <br/>
+        <a href="mailto:taron@012.net.il">As Dafna</a> <br/>
+        <a href="mailto:ascher@research.haifa.ac.il">Ascher	 Yoni (Ph.D.)</a> <br/>
+        <a href="mailto:neta.baryosef@gmail.com">Bar Yosef Bodner Neta</a> <br/>
+        <a href="mailto:rbartal@post.tau.ac.il">Bartal Renana (Ph.D.)</a> <br/>
+        <a href="mailto:nbad@bgu.ac.il">Ben Ari Debby Nirit (Ph.D.)</a> <br/> 
+        <a href="mailto:rben@pob.huji.ac.il">Ben-Sasson Rivka</a> <br/> 
+        <a href="mailto:isi@log.co.il">Bolotzky Israela</a> <br/>
+        <a href="mailto:dfn293@yahoo.com">Botner Dafna</a> <br/>
+        <a href="mailto:chenzur@012.net.il">Chen Zur</a> <br/>
+        <a href="mailto:contessafontana@gmail.com">Contessa Andreina (Ph.D.)</a> <br/>
+        <a href="mailto:ruhmadan@post.tau.ac.il">Danziger Ruhama</a> <br/> 
+        <a href="mailto:fishhofg@post.tau.ac.il">Fishhof Gil (Ph.D.)</a> <br/> 
+        <a href="mailto:gerlitz@mscc.huji.ac.il">Gerlitz Iris</a> <br/>
+        <a href="mailto:gilboakarni@yahoo.com">Gilboa Karni Sara</a> <br/>
+        <a href="mailto:nurit@madalimited.com">Golan Nurit (Prof.)</a> <br/> 
+        <a href="mailto:simon-g@zahav.net.il">Gruneman Simona (Ph.D.)</a> <br/> 
+        <a href="mailto:habas@mscc.huji.ac.il">Habas Lihi (Ph.D.)</a> <br/> 
+        <a href="mailto:noah.hacham@mail.huji.ac.il">Hacham Noah</a> <br/> 
+        <a href="mailto:dalia-ruth.halperin@mail.huji.ac.il">Halperin Dalia-Ruth (Ph.D.)</a> <br/> 
+        <a href="mailto:kainaviv@netvision.net.il">Kain Aviva</a> <br/>
+        <a href="mailto:kenaank@post.tau.ac.il">Kenaan-Keidar Nurit	 (Prof.)</a> <br/> 
+        <a href="mailto:keshman@mscc.huji.ac.il">Keshman Anastasia (Ph.D.)</a> <br/> 
+        <a href="mailto:michalkle@bezeqint.net">Klein Michal</a> <br/>
+        <a href="mailto:katrin@woobling.org">Kogman-Appel Katrin (Prof.)</a> <br/> 
+        <a href="mailto:Kuehnel@mscc.huji.ac.il">Kuehnel Bianca (Prof.)</a> <br/> 
+        <a href="mailto:laderms@mail.biu.ac.il">Laderman Shula (Ph.D.)</a> <br/> 
+        <a href="mailto:madror@zahav.net.il">Maayan-Dror Emma	(Ph.D.)</a> <br/> 
+        <a href="mailto:msmati@mscc.huji.ac.il">Meyer Mati (Ph.D.)</a> <br/> 
+        <a href="mailto:michaeli@post.tau.ac.il">Michaeli Talila (Ph.D.)</a> <br/>
+        <a href="mailto:rmilstein@mscc.huji.ac.il">Milstein Rachel (Prof.)</a> <br/> 
+        <a href="mailto:rmirkin@012.net.il">Mirkin Roni (Ph.D.)</a> <br/>
+        <a href="mailto:annani@imj.org.il/anna_nizza@yahoo.it">Nizza Anna</a> <br/>
+        <a href="mailto:esti@noamadv.co.il">Noam Esther</a> <br/>
+        <a href="mailto:gnbanai@mscc.huji.ac.il">Noga-Banai Galit (Ph.D.)</a> <br/> 
+        <a href="mailto:arie28@013.net">Offenberg Sara (Ph.D.)</a> <br/> 
+        <a href="mailto:alphap@zahav.net.il">Peled Alfa</a> <br/>
+        <a href="mailto:pinkusas@post.tau.ac.il">Pinkuss Asaf (Ph.D.</a> <br/> 
+        <a href="mailto:fhrevel@zahav.net.il">Revel Elisheva (Prof.)</a> <br/>
+        <a href="mailto:shelys@013.net">Salomon Shelly</a> <br/>
+        <a href="mailto:eisegal@netvision.net.il">Segal Einat (Ph.D.)</a> <br/> 
+        <a href="mailto:ornivs@gmail.com">Senior-Niv Orly</a> <br/>
+        Shaham Ruth <br/>
+        <a href="mailto:saritse@mscc.huji.ac.il">Shalev-Eini Sarit (Ph.D.)</a> <br/> 
+        <a href="mailto:gilish@gmail.com;">Shalom Gili</a> <br/>
+        <a href="mailto:shohamst@bgu.ac.il">Shoham Steiner Ephraim (Ph.D.)</a> <br/>
+        <a href="mailto:erga124@gmail.com">Shneurson Erga</a> <br/>
+        <a href="mailto:p_shtemler@yahoo.com">Shtemler Polina</a> <br/>
+        <a href="mailto:naamashu@post.tau.ac.il">Shulman Naama</a> <br/> 
+        <a href="mailto:aliza.steinberg@gmail.com">Steinberg Aliza</a> <br/> 
+        <a href="mailto:uzanym@bgu.ac.il">Stroumsa-Uzan Margo (Ph.D.)</a> <br/>
+        <a href="mailto:itaytalgam@hotmail.com">Talgam Rina (Ph.D.)</a> <br/> 
+        <a href="mailto:taron@012.net.il">Talmon Sharon</a> <br/> 
+        <a href="mailto:taragan@post.tau.ac.il">Taragan Hana	 (Prof.)</a> <br/>
+        <a href="mailto:luisat33@gmail.com">Tavor Aliza</a> <br/>
+        <p>
 - &links !Schema::VersionedItem
   id: "public:resources"
   version: !Schema::Page::Links
@@ -344,16 +489,16 @@ pages:
         title: Humboldt
         description: 
           en: |
-            Related: <a
+            <p>Related: <a
             href="http://www.humboldt-foundation.de/web/7806.html">A listing of
             links to many scholraships in diverse fields</a>,
             <a
             href="http://www.humboldt-foundation.de/web/humboldt-fellowship-experienced.html">Humboldt
-            Research Fellowship for Experienced Researchers</a>
+            Research Fellowship for Experienced Researchers</a></p>
           he: |
-            מידע נוסף: <a href="http://www.humboldt-foundation.de/web/7806.html">רשימת קישוריות למלגות רבות בתחומים מגוונים</a>
+            <p>מידע נוסף: <a href="http://www.humboldt-foundation.de/web/7806.html">רשימת קישוריות למלגות רבות בתחומים מגוונים</a>
             <a href="http://www.humboldt-foundation.de/web/humboldt-fellowship-experienced.html">Humboldt
-            Research Fellowship for Experienced Researchers</a>
+            Research Fellowship for Experienced Researchers</a></p>
         uri: http://www.humboldt-foundation.de/web/771.html
       - !Schema::Link
         title: Deutsche Forschungsgemeinschaft
@@ -424,6 +569,7 @@ roles:
     - *purpose
     - *links
     - *scholarships
+    - *members
   edit: &edit !Web::Role::Edit {}
   login: &login !Web::Role::Login {}
   logout: &logout !Web::Role::Logout {}

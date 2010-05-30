@@ -19,6 +19,12 @@ class Imago::Script::InitDB with MooseX::Runnable with MooseX::Getopt {
         lazy_build => 1,
     );
 
+    has clear => (
+        isa => "Bool",
+        is  => "ro",
+        default => 0,
+    );
+
     method _build_model {
         Imago::Model::KiokuDB->new( dsn => "dbi:SQLite:db/kiokudb.sqlite", extra_args => { create => 1 } ) }
 
@@ -56,6 +62,7 @@ class Imago::Script::InitDB with MooseX::Runnable with MooseX::Getopt {
         warn "Loaded";
 
         $model->txn_do( scope => 1, body => sub {
+            $model->directory->backend->clear if $self->clear;
             $model->insert( @insert, %$objects );
         });
 
