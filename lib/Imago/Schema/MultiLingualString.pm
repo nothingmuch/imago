@@ -43,7 +43,9 @@ class Imago::Schema::MultiLingualString with MooseX::Clone with Imago::Schema::R
 
     method get_best (@options) {
         foreach my $lang ( @options ) {
-            if ( length( my $str = $self->get($lang) ) ) {
+            my $str = $self->get($lang);
+
+            if ( defined($str) && length($str) ) {
                 return $str;
             }
         }
