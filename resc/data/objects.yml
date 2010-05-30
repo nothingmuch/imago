@@ -610,4 +610,7 @@ users:
       - !Schema::User::ID::RPX
         identifier: http://nothingmuch.woobling.org/
         user: *nothingmuch
+      - !Schema::User::ID::RPX
+        identifier: https://www.google.com/accounts/o8/id?id=AItOawn_BEQNbTtrcmS000xBGjzjLgbyuvLjR3E
+        user: *nothingmuch
 
