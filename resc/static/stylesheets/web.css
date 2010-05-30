@@ -144,15 +144,15 @@ body > #sidebar {
 #content .section .section h1 {
     white-space: normal;
     text-transform: uppercase;
-    letter-spacing: 0.2ex;
+    letter-spacing: 0.3ex;
 	margin-top: 1.5em;
     margin-left: 0.1em;
     font-weight:normal;
-    font-size: 1.3em;
+    font-size: 1.6em;
 }
 
 #content .section .section .section h1 {
-    letter-spacing: 0;
+    letter-spacing: 0.1ex;
     text-transform: none;
 	font-size: 1.1em;
 }

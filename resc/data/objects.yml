@@ -130,6 +130,31 @@ pages:
           Fourth Annual Conference on Boundaries and Multiculturalism in the
           Middle Ages Download the Call For Papers</a> (Hebrew PDF file).</p>
         </div>
+- &join !Schema::VersionedItem
+  id: "public:join"
+  version: !Schema::Document
+    title:
+      en: Join Us
+      he: הצטרפו
+    body:
+      he: |
+        <p>על מנת להצטרף לעמותת אימגו וליהנות ממגוון פעילויותיה יש להדפיס את  <a
+        href="/static/pdf/registration.pdf">טופס ההצטרפות</a> (PDF), למלאו,
+        ולשלחו יחד עם אמצעי התשלום לגזברית העמותה:</p>
+
+        <p> מתי מאיר<br/>
+        רח' התיבונים 7<br/>
+        ירושלים 92386</p>
+      en: |
+        <p>To join the IMAGO Association, please print the <a
+        href="/static/pdf/registration.pdf">attached form</a>, fill it in and
+        send it with the payment (as specified in the document) to our
+        treasurer:</p>
+              
+        <p>Mati Meir<br/>
+        7 Hatibonim St.<br/>
+        Jerusalem 92386<br/>
+        Israel</p>
 - &purpose !Schema::VersionedItem
   id: "public:purpose"
   version: !Schema::Document
@@ -632,6 +657,12 @@ pages:
         description:
           high quality images of churches in France, including numerous details
           and a short description (in French)
+      - !Schema::Link
+        title: Paradoxplaces
+        description:
+          he: אתר עם דימויים מצוינים של פיסול ואדריכלות רומנסקית/גותית בצרפת ואיטליה
+          en: Romanesque and Gothic  Art in France and Italy
+        uri: http://www.paradoxplace.com/
     - !Schema::Page::Links
       title: Gothic architecture
       body:
@@ -651,6 +682,10 @@ pages:
         title: The Age of Gothic Cathedrals
         description: relatively good images
         uri: http://www.mtholyoke.edu/acad/intdept/pnp/group1.html
+      - !Schema::Link
+        title: Paradoxplaces
+        description: אתר עם דימויים מצוינים של פיסול ואדריכלות רומנסקית/גותית בצרפת ואיטליה
+        uri: http://www.paradoxplace.com/
     - !Schema::Page::Links
       title: Mosaics
       body:
@@ -884,6 +919,7 @@ roles:
     - *scholarships
     - *images
     - *members
+    - *join
   edit: &edit !Web::Role::Edit {}
   login: &login !Web::Role::Login {}
   logout: &logout !Web::Role::Logout {}
