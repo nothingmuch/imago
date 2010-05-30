@@ -55,6 +55,13 @@ pages:
             <a href="mailto:keshman@mscc.huji.ac.il">keshman@mscc.huji.ac.il</a></p>
           </div>
         </div>
+
+        <div class="section" style="font-size: small">
+          <br/>
+          <br/>
+          <p>תכנות ועיצוב האתר ע"י <a
+          href="http://nothingmuch.woobling.org/">יובל קוג'מן</a>.</p>
+        </div>
       en: |
         <p><b>Imago - The Israeli Association for Visual Culture of the Miple Ages</b> was
         founded in 2008 with the aim to represent the interests of scholars and
@@ -101,6 +108,13 @@ pages:
             <p>Anastasia Keshman, Post-doctoral researchers <br/>
             <a href="mailto:keshman@mscc.huji.ac.il">keshman@mscc.huji.ac.il</a></p>
           </div>
+        </div>
+
+        <div class="section" style="font-size: small">
+          <br/>
+          <br/>
+          <p>Website design and programming by <a
+          href="http://nothingmuch.woobling.org/">Yuval Kogman</a>.</p>
         </div>
 - !Schema::VersionedItem
   id: "public:index"

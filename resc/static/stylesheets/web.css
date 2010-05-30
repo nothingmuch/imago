@@ -86,7 +86,8 @@ body > #sidebar {
     
 .menu a {
     display:block;
-    padding: .5em 20px .5em 0;
+    letter-spacing: 1pt;
+    padding: 0.45em 1em 0.45em 0;
     color:#606060;
     font-weight:normal;
     text-decoration:none;
@@ -115,8 +116,8 @@ body > #sidebar {
     top: 0;
     left: 13em;
 
-    margin-right: 4em;
-    max-width: 120ex;
+    margin-right: 3em;
+    max-width: 125ex;
     min-width: 70ex;
     min-height: 100%;
 
