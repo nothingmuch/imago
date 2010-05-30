@@ -35,13 +35,12 @@ pages:
 
           <div class="section">
             <h1>תקנון</h1>
-            <p>מרגו שטרומזה-אוזן, תלמידי מחקר, אוניברסיטת בן-גוריון בנגב <br/>
+            <p>מרגו שטרומזה-אוזן, אוניברסיטת בן-גוריון בנגב <br/>
             <a href="mailto:uzanym@bgu.ac.il">uzanym@bgu.ac.il</a></p>
           </div>
 
           <div class="section">
             <h1>אינטרנט ופרויקטים מיוחדים</h1>
-            <p>אסף פינקוס <br/>
             <p>אסף פינקוס, אוניברסיטת תל-אביב <br/>
             <a href="mailto:pinkusas@post.tau.ac.il">pinkusas@post.tau.ac.il</a> <br/>
             אנסטסיה קשמן, חוקרי פוסט-דוקטורט <br/>
@@ -529,17 +528,19 @@ pages:
         he: מלגות בשיתוף עם/בישראל
       body:
       - !Schema::Link
+        title: Israel Science Foundation
         uri: http://www.isf.org.il/
       - !Schema::Link
+        title: United States-Israel Fulbright Foundation
         uri: http://www.fulbright.org.il/
       - !Schema::Link
+        title: German-Israeli Foundation
         uri: http://www.gif.org.il/
       - !Schema::Link
-        uri: http://www.bard-isus.com/
-      - !Schema::Link
+        title: The Israel Aacademy of Sciences and Humanities
         uri: http://www.academy.ac.il/
       - !Schema::Link
-        title: רשימת מלגות דוקטורנטים באתר לימודים בישראל
+        title: אינדקס מלגות בישראל
         uri: http://www.universities-colleges.org.il/דוקטורנטים/
       - !Schema::Link
         title: מלגת אלון
