@@ -78,7 +78,7 @@ coerce "Imago::Schema::TextOrHTML", from "Str", via {
 
     my $lang = ( /\p{Hebrew}/ ? "he" : "en" );
 
-    my $class = ( $str =~ /^\s*\<\w+.*?\>/ ? "Imago::Schema::HTML" : "Imago::Schema::String" );
+    my $class = ( $str =~ /\<\w+.*?\>/s ? "Imago::Schema::HTML" : "Imago::Schema::String" );
 
     Class::MOP::load_class($class);
     $class->new( $lang => $str );
@@ -91,7 +91,7 @@ coerce "Imago::Schema::TextOrHTML", from "HashRef", via {
 
     for ( values %hash ) {
         $_ = utf8::is_utf8($_) ? $_ : decode_utf8($_);
-        $class = "Imago::Schema::HTML" if /^\s*\<\w+.*?\>/;
+        $class = "Imago::Schema::HTML" if /\<\w+.*?\>/s;
     }
 
     Class::MOP::load_class($class);

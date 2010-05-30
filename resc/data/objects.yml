@@ -260,7 +260,7 @@ pages:
           uri: http://www.fordham.edu/halsall/medweb/links.htm
         - !Schema::Link
           title: The Labyrinth
-          description: |
+          description:
             textual resources for medieval studies sponsored by Georgetown
             University, including numerous links (to some of them the access
             may be forbidden)
@@ -300,8 +300,8 @@ pages:
           uri: http://www.doaks.org/publications/doaks_online_publications.html
         - !Schema::Link
           title: Internet Medieval Sourcebook
-          description: |
-            <p>links to selected textual sources, full texts of medieval
+          description:
+            links to selected textual sources, full texts of medieval
             sources arranged according to type, and ancient, medieval and
             Byzantine hagiographical sources. <a
             href="http://www.fordham.edu/halsall/sbook1c.html">Byzantine
@@ -315,13 +315,13 @@ pages:
           uri: http://kodesh.snunit.k12.il
         - !Schema::Link
           title: Medieval Sources Online
-          description: |
-            <p>a comprehensive guide to medieval history material available on
+          description:
+            a comprehensive guide to medieval history material available on
             the Internet, arranged by subject areas, such as <a
             href="http://www.medievalsources.co.uk/portal_blackdeath.htm">The
             Black Death and the Peasants' Revolt in England</a> and <a
             href="http://www.medievalsources.co.uk/portal_crusades.htm">the
-            Crusades</a></p>
+            Crusades</a>
           uri: http://www.medievalsources.co.uk/
         - !Schema::Link
           title: Monumenta Germaniae Historica
@@ -333,7 +333,7 @@ pages:
           uri: http://www.responsa.co.il/
         - !Schema::Link
           title: The National Archives of England, Wales, and the United Kindom
-          description: |
+          description:
             catalogue of more than 9 millions of historical documents, from
             Domesday Book to the present, some of them in full text.
           uri: http://www.nationalarchives.gov.uk/
@@ -342,13 +342,13 @@ pages:
         body:
         - !Schema::Link
           title: "Feminae: Medieval Women and Gender Index"
-          description: |
+          description:
             covers journal articles, book reviews, and essays in books about
             women, sexuality, and gender during the Middle Ages.
           uri: http://www.haverford.edu/library/reference/mschaus/mfi/mfi.html
         - !Schema::Link
           title: Monastic Matrix
-          description: |
+          description:
             resources for the study of religious women from 400AD to 1600,
             including images of art objects, architecture, archaeological
             remains, site-plans, and maps related to religious women and their
@@ -359,14 +359,14 @@ pages:
       body:
       - !Schema::Link
         title: The Catholic Encyclopedia
-        description: |
-          <p>Also contains entries <a
+        description:
+          Also contains entries <a
           href="http://www.newadvent.org/cathen/06665b.htm">on Gothic
-          architecture</a></p>
+          architecture</a>
         uri: http://newadvent.org/cathen/
       - !Schema::Link
         title: The Patrologia Latina
-        description: |
+        description:
           an electronic version of the first edition of Jacques-Paul Migne's
           Patrologia Latina (1844-1855), it comprises the works of the Church
           Fathers from Tertullian in 200 AD to the death of Pope Innocent III
@@ -377,7 +377,7 @@ pages:
       body:
       - !Schema::Link
         title: Art history survey
-        description: |
+        description:
           including medieval, Byzantine, and Islamic art; each modullus comprises
           main notes, terms, slides, and details.
         uri: http://dl.ccc.cccd.edu/classes/internet/art100_8week/module9.htm#images
@@ -391,7 +391,7 @@ pages:
         uri: http://www.udel.edu/ArtHistory/nees/209/images.html
       - !Schema::Link
         title: European Art & Civilization before 1400
-        description: |
+        description:
           sponsored by Penn University, the art historical survey contains also
           images and labels of medieval art
         uri: http://www.arthistory.upenn.edu/smr04/101910/101910imageindex.html
@@ -400,14 +400,14 @@ pages:
       body:
       - !Schema::Link
         title: ArtHist
-        description: |
+        description:
           an inter-university, public, non-for-profit institution for
           publications and discussions concerning art history; offers
           information on conferences, publications, jobs, grants, etc.
         uri: http://www.arthist.net/StartE.html
       - !Schema::Link
         title: Bibliography of the History of Art
-        description: |
+        description:
           a large database covering the international literature on the
           history of art from late antiquity to the present, including indexes
           and abstracts of 1,400 journals, as well as books, conference
@@ -421,13 +421,13 @@ pages:
         uri: http://www.ovid.com/site/catalog/DataBase/209.jsp
       - !Schema::Link
         title: Dictionary of Art Historians
-        description: |
+        description:
           a biographical dictionary of historic scholars, museum professionals
           and academic historians of art
         uri: http://www.dictionaryofarthistorians.org
       - !Schema::Link
         title: International Foundation for Art Research (IFAR)
-        description: |
+        description:
           a not-for-profit educational and research organization dedicated to
           integrity in the visual arts. IFAR offers information on
           authenticity, ownership, theft, and other artistic, legal, and
@@ -436,6 +436,275 @@ pages:
       - !Schema::Link
         title: ProQuest Dissertations & Theses
         uri: http://wwwlib.umi.com/dissertations/
+- &images !Schema::VersionedItem
+  id: "public:images"
+  version: !Schema::Page::Links
+    title:
+      en: Images
+      he: דימויים
+    body:
+    - !Schema::Page::Links
+      title: General
+      body:
+      - !Schema::Link
+        title: Art History, Resources on the Web/Heilbrunn Timeline of Art History
+        description:
+          art history survey, including high-resolution images of medieval
+          art, and links to thematic essays
+        uri: http://witcombe.sbc.edu/ARTHmedieval.html
+      - !Schema::Link
+        title: ARTHISTORICUM
+        description:
+          excellent site of over 2 million art history digital images,
+          including medieval ones; the search is in German
+        uri: http://www.arthistoricum.net/en/recherche/image-search/ 
+      - !Schema::Link
+        title: ArtLex
+        description:
+          definitions for more than 3,600 terms of art/visual culture,
+          including images, pronunciation notes, quotations and
+          cross-references; links to various sites.
+        uri: http://www.artlex.com/
+      - !Schema::Link
+        title: ARTstor
+        description:
+          digital image bank of nearly one million images (art, architecture,
+          the humanities, and social sciences). (access via affiliated
+          institution)
+        uri: http://www.artstor.org/index.shtml
+      - !Schema::Link
+        title: Byzantium
+        description: >
+          Byzantine studies on the internet: Byzantine Studies Conference,
+          syllabi, course outlines, image gallery, Byzantine online sources,
+          articles, bibliographies
+        uri: http://www.fordham.edu/halsall/byzantium/
+      - !Schema::Link
+        title: CENSUS
+        description: of antique works of art and architecture known in the Renaissance.
+        uri: http://www.census.de/census/
+      - !Schema::Link
+        title: Grove Art Online (access via affiliated institution)
+        uri: http://www.oxfordartonline.com/subscriber/
+      - !Schema::Link
+        title: John Lowden, Early Christian and Byzantine Art
+        description: digital images of the book
+        uri: http://www.ou.edu/class/ahi4263/byzantine.html
+      - !Schema::Link
+        title: ICMA - International Center for Medieval Art
+        description:
+          news, events, publications, and resources (texts and images) to
+          medieval art studies from a variety of libraries and collections. 
+        uri: http://www.medievalart.org
+      - !Schema::Link
+        title: Images of Medieval Art and Architecture
+        description: including glossary
+        uri: http://www.pitt.edu/~medart/menuglossary/INDEX.HTM
+      - !Schema::Link
+        title: Index of Early Christian and Byzantine Image Pages
+        description: digital images
+        uri: http://campus.belmont.edu/honors/byzart2001/byzindex.html
+      - !Schema::Link
+        title: Medieval Byzantine Icons, Frescoes & Mosaics
+        description: numerous images, including further links to Byzantine art.
+        uri: http://www.iconsexplained.com/iec/iec_idb2g.htm
+      - !Schema::Link
+        title: Medieval Spain
+        description: including maps, images, and thematic essays
+        uri: http://medspains.stanford.edu/demo/index.html
+      - !Schema::Link
+        title: Mythography, Greek Mythology and Art
+        description: visual and textual sources of Greek mythology
+        uri: http://www.loggia.com/myth/content.html
+      - !Schema::Link
+        title: Paradoxplace
+        description: excellent private free online collection
+        uri: http://www.paradoxplace.com/
+      - !Schema::Link
+        title: Peregrinations website
+        description:
+          in addition to being the online journal of the Society for the Study
+          of Pilgrimage Art, this site offers many additional links, among them
+          a collection of copyright-free images.
+        uri: http://peregrinations.kenyon.edu/vol2-2_1/photobank.html
+      - !Schema::Link
+        title: The Center for Jewish Art
+        description: The Hebrew University Jerusalem 
+        uri: http://cja.huji.ac.il/home_page.html
+      - !Schema::Link
+        title: The Index of Christian Art
+        description:
+          a thematic and iconographic index of early Christian and medieval art
+          objects, in different media, with an emphasis on Western art. (access
+          via affiliated institution)
+        uri: http://ica.princeton.edu/
+      - !Schema::Link
+        title: The Perseus Project, Tufts
+        description: for ancient topics and images
+        uri: http://www.perseus.tufts.edu/
+      - !Schema::Link
+        title: VEDUTE DI ROMA
+        description: images of various monuments Roman, late antique and early Christian, in Rome
+        uri: http://www2.siba.fi/~kkoskim/rooma/pages/COLOSSEU.HTM
+      - !Schema::Link
+        title: Web Gallery of Art
+        description: some late medieval images, including explanatory text
+        uyri: http://www.wga.hu/
+      - !Schema::Link
+        title: "Wellesley: image wiki"
+        description:
+          free- and fair-use digital image collections on art history,
+          including late antique, early Christian, Western and Byzantine
+          medieval art.
+        uri: http://digital-image-collections.wikispaces.com/ 
+      - !Schema::Link
+        title: WORLDIMAGES ART & ARCHITECTURE PORTFOLIOS
+        description: more than 70,000 images, including medieval
+        uri: http://worldimages.sjsu.edu.
+    - !Schema::Page::Links
+      title: Architecture
+      body:
+      - !Schema::Link
+        title: A Digital Archive of Architecture/Boston College
+        description: including early Christian and medieval architecture
+        uri: http://www.bc.edu/bc_org/avp/cas/fnart/arch/contents_europe.html
+      - !Schema::Link
+        title: Early Christian
+        description:
+          excellent images of the wood doors of Santa Sabina (Rome), with a
+          large explanatory text and bibliography
+        uri: http://www.rome101.com/Christian/Sabina/
+      - !Schema::Link
+        title: Theo Jacobs Photography
+        description: medieval monasteries and churches, mainly in England, Scotland, and Spain
+        uri: http://photo.net/photos/tmjacobs
+      - !Schema::Link
+        title: Churches and Monasteries in Macedonia
+        description: images from the Byzantine rule of Macedonia
+        uri: http://www.mpc.org.mk/English/vGal.asp?kw=Churches
+      - !Schema::Link
+        title: Medieval Architecture
+        description: site sponsored by the media center for art history, archaeology and historic preservation Columbia University
+        uri: http://www.learn.columbia.edu/ma/htm/ma_site_image.htm 
+      - !Schema::Link
+        title: "St. Peter's basilica, Rome"
+        uri: http://www.stpetersbasilica.org/index.htm
+    - !Schema::Page::Links
+      title: Romanesque architecture
+      body:
+      - !Schema::Link
+        uri: http://www.dapt.ing.unibo.it/nuovosito/Docenti/Bettazzi/corsobet/romanico/indice.htm
+      - !Schema::Link
+        uri: http://www.romanes.com/France_fr.html
+        description: high quality images of churches in France, including numerous details 
+      - !Schema::Link
+        uri: http://peregrinations.kenyon.edu/gilles_photoessay/gillesimageresources.html
+        description: images of some churches in France, including concise information on each 
+      - !Schema::Link
+        uri: http://www.art-roman.net/index.htm
+        description: high quality images of churches in France, including numerous details and a short description
+      - !Schema::Link
+        uri: http://www.terres-romanes.lu/index.html
+        description:
+          high quality images of churches in France, including numerous details
+          and a short description (in French)
+    - !Schema::Page::Links
+      title: Gothic architecture
+      body:
+      - !Schema::Link
+        title: Gothic cathedrals in France
+        description: including maps, plans, exterior and interior views.
+        uri: http://www.pitt.edu/~medart/menufrance/mainfran.html  
+      - !Schema::Link
+        title: GOTHIC (Northern Europe)
+        description: numerous images, and links, to Gothic architecture
+        uri: http://witcombe.sbc.edu/ARTHgothic.html#Gothic 
+      - !Schema::Link
+        title: GOTHIC
+        description: images of German cathedrals, and sculptures, including image details and bibliography
+        uri: http://www.arthist.umn.edu/aict/html/medieval/germ_goth4.html
+      - !Schema::Link
+        title: The Age of Gothic Cathedrals
+        description: relatively good images
+        uri: http://www.mtholyoke.edu/acad/intdept/pnp/group1.html
+    - !Schema::Page::Links
+      title: Mosaics
+      body:
+      - !Schema::Link
+        title: Classical, early Christian, western and Byzantine mosaics
+        uri: http://www.classicalmosaics.com/photo_album.htm
+      - !Schema::Link
+        title: Various mosaics, including early Christian, and Byzantine
+        uri: http://mosaicartsource.wordpress.com/category/mosaic/mosaic-images/religious/	
+    - !Schema::Page::Links
+      title: Manuscripts
+      body:
+      - !Schema::Link
+        title: Digital Scriptorium
+        description:
+          image database of medieval and renaissance manuscripts from many
+          institutions; hosted by Columbia University Libraries.
+        uri: http://www.scriptorium.columbia.edu/
+      - !Schema::Link
+        title: British Library
+        description:
+          images online, including some medieval <a
+          href="http://www.bl.uk/catalogues/illuminatedmanuscripts/welcome.htm">illustrated
+          manuscripts</a>
+        uri: http://www.imagesonline.bl.uk/
+      - !Schema::Link
+        title: Codex Manesse
+        description:
+          digital images of Cod. Pal. germ. 848, große Heidelberger
+          Liederhandschrift (Codex Manesse), Zürich, 1305-1340 (German)
+        uri: http://diglit.ub.uni-heidelberg.de/diglit/cpg848/
+      - !Schema::Link
+        title: CORSAIR
+        description: more than 5,000 images of medieval and Renaissance illustrated manuscripts from the Pierpont Morgan Library.
+        uri: http://utu.morganlibrary.org/index.htm
+      - !Schema::Link
+        title: ENLUMINURES
+        description: more than 80,000 images from over 100 municipal libraries in France.
+        uri: http://www.enluminures.culture.fr/documentation/enlumine/fr/
+      - !Schema::Link
+        title: Free Library of Philadelphia
+        description: digital collection of medieval and Renaissance illuminates manuscripts.
+        uri: http://libwww.library.phila.gov/medievalman/Jewish National and University Library
+      - !Schema::Link
+        description: digital images of Hebrew illuminated MSS, including explanatory texts (Hebrew/English)
+        uri: http://jnul.huji.ac.il/dl/mss/
+      - !Schema::Link
+        title: Koninklijke Bibliotheek (The Hague)
+        description: medieval illuminated manuscripts with comprehensive bibliographies; search by iconography
+        uri: http://www.kb.nl/manuscripts/index_nl.html
+      - !Schema::Link
+        title: Late Antique & Mediaeval Manuscripts
+        description: numerous good images of illustrated manuscripts
+        uri: http://rubens.anu.edu.au/htdocs/bytype/manuscripts/survey/index.html
+      - !Schema::Link
+        title: Liber Floridus
+        description: database of illustrated manuscripts from the Libraries Mazarine and Ste. Geneviève in Paris 
+        uri: http://liberfloridus.cines.fr/textes/cines.html
+      - !Schema::Link
+        title: Library of the Hungarian Academy of Sciences
+        description: Kaufmann collection of Hebrew illuminated MSS
+        uri: http://kaufmann.mtak.hu/index-en.html
+      - !Schema::Link
+        title: MOLEIRO
+        description: reproductions of medieval illuminations; can be used for study
+        uri: http://www.moleiro.com/
+      - !Schema::Link
+        title: New York Public Library Digital Gallery
+        description:
+          with more than 2,000 <a
+          href="http://digitalgallery.nypl.org/nypldigital/explore/dgexplore.cfm?topic=printing&col_id=173">images
+          of illuminations from Western Europe dating from the 9th-16th
+          centuries</a>.
+        uri: http://digitalgallery.nypl.org/nypldigital/index.cfm
+      - !Schema::Link
+        title: The Fitwilliam Museum at Cambridge
+        description: illuminated manuscripts 
+        uri: http://www.fitzmuseum.cam.ac.uk/opac/search/cataloguedetail.html?&priref=82864&_function_=xslt&_limit_=50
 - &scholarships !Schema::VersionedItem
   id: "public:scholarships"
   version: !Schema::Page::Links
@@ -508,16 +777,16 @@ pages:
         title: Humboldt
         description: 
           en: |
-            <p>Related: <a
+            Related: <a
             href="http://www.humboldt-foundation.de/web/7806.html">A listing of
             links to many scholraships in diverse fields</a>,
             <a
             href="http://www.humboldt-foundation.de/web/humboldt-fellowship-experienced.html">Humboldt
-            Research Fellowship for Experienced Researchers</a></p>
+            Research Fellowship for Experienced Researchers</a>
           he: |
-            <p>מידע נוסף: <a href="http://www.humboldt-foundation.de/web/7806.html">רשימת קישוריות למלגות רבות בתחומים מגוונים</a>
+            מידע נוסף: <a href="http://www.humboldt-foundation.de/web/7806.html">רשימת קישוריות למלגות רבות בתחומים מגוונים</a>
             <a href="http://www.humboldt-foundation.de/web/humboldt-fellowship-experienced.html">Humboldt
-            Research Fellowship for Experienced Researchers</a></p>
+            Research Fellowship for Experienced Researchers</a>
         uri: http://www.humboldt-foundation.de/web/771.html
       - !Schema::Link
         title: Deutsche Forschungsgemeinschaft
@@ -588,6 +857,7 @@ roles:
     - *purpose
     - *links
     - *scholarships
+    - *images
     - *members
   edit: &edit !Web::Role::Edit {}
   login: &login !Web::Role::Login {}
