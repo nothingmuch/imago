@@ -32,7 +32,7 @@ filter("ul", repeat_content => [
                 $desc = $desc->() if ref $desc eq 'CODE';
                 $zoom = $zoom->select("span")->replace(
                     HTML::Zoom->from_html(
-                        "<span>:&nbsp;&nbsp;" .
+                        "<span>: " .
                         (blessed $desc ? $desc->to_html : HTML::Entities::encode_entities($desc) )
                         . "</span>"
                     ),

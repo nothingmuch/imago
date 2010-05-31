@@ -657,9 +657,11 @@ pages:
       title: Romanesque architecture
       body:
       - !Schema::Link
+        title: Prof. M.Beatrice Bettazzi - I romani
         uri: http://www.dapt.ing.unibo.it/nuovosito/Docenti/Bettazzi/corsobet/romanico/indice.htm
       - !Schema::Link
-        uri: http://www.romanes.com/France_fr.html
+        title: Romanes
+        uri: http://www.romanes.com/France_en.html
         description: high quality images of churches in France, including numerous details 
       - !Schema::Link
         uri: http://peregrinations.kenyon.edu/gilles_photoessay/gillesimageresources.html
@@ -745,6 +747,7 @@ pages:
         description: digital collection of medieval and Renaissance illuminates manuscripts.
         uri: http://libwww.library.phila.gov/medievalman/Jewish National and University Library
       - !Schema::Link
+        title: Digitized Manuscripts at the National Library of Israel
         description: digital images of Hebrew illuminated MSS, including explanatory texts (Hebrew/English)
         uri: http://jnul.huji.ac.il/dl/mss/
       - !Schema::Link
