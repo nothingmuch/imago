@@ -108,7 +108,11 @@ class Imago::Web {
     );
 
     method _build_crypt {
-        Crypt::Util->new( default_key => $self->get_key("crypt") )
+        Crypt::Util->new(
+            default_key => $self->get_key("crypt"),
+            default_encode => 1,
+            default_encoding => "uri_base64",
+        )
     }
 
     has model => (
