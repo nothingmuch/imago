@@ -15,6 +15,9 @@ class Imago::Web::Context with MooseX::Clone {
     use Imago::Web::AuthToken::User;
     use Imago::Web::AuthToken::UserID;
 
+    use Path::Router;
+    use Path::Router::Route::Match;
+
     # FIXME these are all IOC things from B::B
 
     has rpx => (
@@ -56,13 +59,15 @@ class Imago::Web::Context with MooseX::Clone {
 
     has lang => (
         isa => "Str",
-        is  => "ro",
+        is  => "rw",
         lazy_build => 1,
     );
 
     method _build_lang {
-        if ( my $lang = $self->user->settings->lang ) {
-            return $lang;
+        if ( my $uri_lang = $self->path_router_arg("view_lang") ) {
+            return $uri_lang;
+        } elsif ( my $user_lang = $self->user->settings->lang ) {
+            return $user_lang;
         } elsif ( my $accept = $self->header("Accept-Lanaguage") ) {
             # FIXME B::B
             return I18N::AcceptLanguage->new( defaultLanuage => "he" )->accepts(
@@ -138,14 +143,24 @@ class Imago::Web::Context with MooseX::Clone {
         }
     }
 
-    method uri_for (Imago::Web::Action $action, @args) {
-        my $path = $self->router->uri_for(
-            role => $action->role->name,
-            $action->path_router_args,
-        ) or die "No URI in router for $self";
-
-        return $self->uri_for_path( $path, [ $action->query_params ], @args );
+    method uri_for (Imago::Web::Action $action) {
+        $self->uri_for_args(
+            path_args => {
+                ( $action->isa("Imago::Web::Action::Page") ? ( view_lang => $self->lang ) : () ), # FIXME figure this out, maybe redirect /:page to /:lang/:page
+                role => $action->role->name,
+                $action->path_router_args,
+            },
+            query_params => [ $action->query_params ]
+        );
     }
+
+    method uri_for_args (HashRef :$path_args!, ArrayRef :$query_params = []) {
+        my $path = $self->router->uri_for(%$path_args)
+            or confess "No URI in router for @{[ %$path_args ]}";
+
+        return $self->uri_for_path($path, $query_params);
+    }
+
 
     method uri_for_path ( Str $path, ArrayRef $query_params, :$representation ) {
         my $uri = $self->plack_request->base->clone;
@@ -159,6 +174,22 @@ class Imago::Web::Context with MooseX::Clone {
         return $uri;
     }
 
+    has path_router_match => (
+        isa => "Path::Router::Route::Match",
+        is  => "ro",
+        lazy_build => 1,
+    );
+
+    method _build_path_router_match {
+        $self->router->match($self->path_basename); # FIXME mismatch should 404 but probably dies
+    }
+
+    method path_router_args {
+        return %{ $self->path_router_match->mapping };
+    }
+
+    method path_router_arg (Str $name) { $self->path_router_match->mapping->{$name} }
+
     has action => (
         traits => [qw(NoClone)],
         does => "Imago::Web::Action",
@@ -167,21 +198,19 @@ class Imago::Web::Context with MooseX::Clone {
     );
 
     method _build_action {
-        timed { $self->get_action( path => $self->path_basename, method => $self->plack_request->method ) } "Get action";
+        timed {
+            $self->get_action(
+                $self->path_router_args,
+                method => uc($self->plack_request->method)
+            )
+        } "Get action";
     }
 
-    method get_action ( Str :$path, Str :$method = "GET" ) {
-        exit if $path =~ /exit$/; # FIXME
-
-        my $match = $self->router->match($path) or return; # 404
-
-        my %args = %{ $match->mapping };
-
+    method get_action (%args) {
         my $role = $self->user->get_role(delete $args{role}) or die "forbidden"; # 403
 
         my $action = $role->get_action(
             $self,
-            method => uc($self->plack_request->method),
             %args,
         ) or die "Forbidden";
 
@@ -207,7 +236,16 @@ class Imago::Web::Context with MooseX::Clone {
     );
 
     method _build_response {
-        timed { $self->renderer->render($self, $self->action_result) } "rendering";
+        my $res = timed { $self->renderer->render($self, $self->action_result) } "rendering";
+
+        if ( $self->action->isa("Imago::Web::Action::Page") and $self->path_router_arg("view_lang") ) {
+            return $res->add_headers(
+                "Cache-Control" => "public; max-age=" . (24 * 3600),
+                "Expires"       => HTTP::Date::time2str( time + 24 * 3600 ),
+            );
+        } else {
+            return $res;
+        }
     }
 
     method user_in_storage {

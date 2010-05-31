@@ -69,6 +69,12 @@ class Imago::Web {
             },
         );
 
+        $r->add_route('/:view_lang/:page' =>
+            defaults => {
+                role => "browse",
+            },
+        );
+
         $r->add_route('/:page' =>
             defaults => {
                 role => "browse",

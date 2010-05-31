@@ -53,7 +53,16 @@ class Imago::Web::Role::Browse with Imago::Web::Role {
             Imago::View::Widget::Link->new(
                 action => $self->lang_action(
                     lang   => $_,
-                    return => $c->return_uri,
+                    return => $c->action->isa("Imago::Web::Action::Page")
+                        # twiddle URIs with explicit language here, otherwise
+                        # fallback to return URI
+                        ?   $c->uri_for_args(
+                                path_args => {
+                                    $c->action->path_router_args,
+                                    view_lang => $_,
+                                },
+                            )
+                        : $c->return_uri,
                 ),
                 content => $langs{$_},
             ),
@@ -121,12 +130,12 @@ class Imago::Web::Role::Browse with Imago::Web::Role {
         }
     }
 
-    multi method get_action (Imago::Web::Context $c, Imago::Schema::VersionedItem :$page!, Str :$method ) {
+    multi method get_action (Imago::Web::Context $c, Imago::Schema::VersionedItem :$page!, Str :$method, Str :$view_lang ) {
         my %args; # FIXME slupry
         $self->get_action($c, %args, page => $page->public_id );
     }
 
-    multi method get_action (Imago::Web::Context $c, Str :$page, Str :$method ) {
+    multi method get_action (Imago::Web::Context $c, Str :$page, Str :$method, Str :$view_lang ) {
         my %args; # FIXME slurpy
 
         return Imago::Web::Action::Page->new(
