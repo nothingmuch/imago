@@ -68,7 +68,7 @@ class Imago::Web::Context with MooseX::Clone {
             return $uri_lang;
         } elsif ( my $user_lang = $self->user->settings->lang ) {
             return $user_lang;
-        } elsif ( my $accept = $self->header("Accept-Lanaguage") ) {
+        } elsif ( my $accept = $self->header("Accept-Language") ) {
             # FIXME B::B
             return I18N::AcceptLanguage->new( defaultLanuage => "he" )->accepts(
                 $accept,
